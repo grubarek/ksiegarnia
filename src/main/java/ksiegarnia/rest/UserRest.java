@@ -16,6 +16,9 @@
  */
 package ksiegarnia.rest;
 
+import ksiegarnia.dao.UserDao;
+import ksiegarnia.model.User;
+
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -26,10 +29,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
-import ksiegarnia.dao.*;
-
-import ksiegarnia.model.*;
 
 @Path("/")
 public class UserRest extends AbstractRest {
@@ -51,7 +50,7 @@ public class UserRest extends AbstractRest {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
 					.build();
 		}
-		//FIXME stworzyc clase UserManager, tam przeniesc wszystko zwiazane z userem i tutaj tyko wywolac metode userManager.account(Account usergit 
+		//FIXME stworzyc clase UserManager, tam przeniesc wszystko zwiazane z userem i tutaj tyko wywolac metode userManager.account(Account userAccount)
 		if (login == null || password == null || password2 == null
 				|| eMail == null) {
 			return Response.status(Response.Status.BAD_REQUEST).build();
