@@ -45,13 +45,13 @@ public class UserRest extends AbstractRest {
 			@QueryParam("password2") String password2,
 			@QueryParam("eMail") String eMail,
 			@Context HttpServletRequest request) {
-
+		//TODO "pawel" stworzyc nowa klase AssignAccount/Accunt paramety login, pass,pass2 i email. i obiet tej metody przekazywac do request-a
 		HttpSession httpSession = request.getSession();
 		if (httpSession == null) {
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
 					.build();
 		}
-
+		//FIXME stworzyc clase UserManager, tam przeniesc wszystko zwiazane z userem i tutaj tyko wywolac metode userManager.account(Account usergit 
 		if (login == null || password == null || password2 == null
 				|| eMail == null) {
 			return Response.status(Response.Status.BAD_REQUEST).build();

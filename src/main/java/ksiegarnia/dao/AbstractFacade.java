@@ -11,8 +11,7 @@ public abstract class AbstractFacade {
 	
 	@PersistenceContext(unitName="primary")
 	protected EntityManager em;
-	
-	
+
 	public EntityManager getEm() {
 		return em;
 	}
