@@ -1,5 +1,8 @@
 package ksiegarnia.dao;
 
-public interface UserAddressDao {
+import ksiegarnia.model.Address;
 
+public interface UserAddressDao {
+    public String getAddress(Address address) throws Exception;
+    public long editAddress(Address address) throws Exception;
 }
