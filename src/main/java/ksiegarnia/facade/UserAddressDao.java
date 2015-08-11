@@ -1,4 +1,4 @@
-package ksiegarnia.dao;
+package ksiegarnia.facade;
 
 public interface UserAddressDao {
 

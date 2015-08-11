@@ -1,4 +1,4 @@
-package ksiegarnia.dao;
+package ksiegarnia.facade;
 
 import java.util.logging.Logger;
 

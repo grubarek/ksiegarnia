@@ -1,10 +1,13 @@
-package ksiegarnia.dao;
+package ksiegarnia.facade;
 
 import javax.ejb.Stateless;
+
+import ksiegarnia.dao.DaoException;
+import ksiegarnia.dao.UserDao;
 import ksiegarnia.model.User;
 
 @Stateless
-public class UserFacade extends AbstractFacade implements  UserDao {
+public class UserFacade extends AbstractFacade implements UserDao {
 
 	
 	
@@ -21,7 +24,7 @@ public class UserFacade extends AbstractFacade implements  UserDao {
 	}
 
 	@Override
-	public boolean deleteUser(long userId) throws DaoException{
+	public boolean deleteUser(long userId) throws DaoException {
 		logger.info("delete user" + userId);
 		try{
 			User user = em.find(User.class, userId);
