@@ -1,0 +1,72 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Spotkania</ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="1" />
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form id="listForm">
+            <ui:include src="/modules/account_tab_menu.xhtml">
+                <ui:param name="selectedSubTabIndex" value="2" />
+            </ui:include>
+
+            <p:panel id="main" header="Spotkania użytkownika #{meetingBean.selectedAccount.firstName} #{meetingBean.selectedAccount.lastName} (login: #{meetingBean.selectedAccount.login})" style="margin-bottom:20px">
+
+            <p:dataTable var="meeting" id="table" value="#{meetingBean.meetings}" filteredValue="#{meetingBean.filteredMeetings}" widgetVar="meetingTable" emptyMessage="Nie ma jeszcze żadnych wpisów." paginator="true" rows="10" paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}">
+                <f:facet name="header">
+                    <p:outputPanel style="float: right;">
+                        <h:outputText value="Szukaj:" />
+                        <p:inputText id="globalFilter" onkeyup="meetingTable.filter()" style="width:150px; margin-left: 10px;" />
+                    </p:outputPanel>
+                </f:facet>
+
+                <p:column headerText="ID" filterMatchMode="contains" filterBy="#{meeting.meetingId}" sortBy="#{meeting.meetingId}" styleClass="wrap-text">#{meeting.meetingId}</p:column>
+                <p:column headerText="Klient imię" filterMatchMode="contains" filterBy="#{meeting.customerFirstName}" sortBy="#{meeting.customerFirstName}" styleClass="wrap-text">#{meeting.customerFirstName}</p:column>
+                <p:column headerText="Klient nazwisko" filterMatchMode="contains" filterBy="#{meeting.customerLastName}" sortBy="#{meeting.customerLastName}" styleClass="wrap-text">#{meeting.customerLastName}</p:column>
+                <p:column headerText="Klient pesel" filterMatchMode="contains" filterBy="#{meeting.customerPesel}" sortBy="#{meeting.customerPesel}" styleClass="wrap-text">#{meeting.customerPesel}</p:column>
+                <p:column headerText="Miejsce spotkania" filterMatchMode="contains" filterBy="#{meeting.location}" sortBy="#{meeting.location}" styleClass="wrap-text">#{meeting.location}</p:column>
+
+
+                <p:column headerText="Data spotkania" filterMatchMode="contains" filterBy="#{utilsBean.getDateString(meeting.startDate)}"  sortBy="#{meeting.startDate}">
+                    <h:outputText value="#{meeting.startDate}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                    </h:outputText>
+                </p:column>
+
+                <p:column headerText="Data utworzenia" filterMatchMode="contains" filterBy="#{utilsBean.getDateString(meeting.creationDate)}"  sortBy="#{meeting.creationDate}">
+                    <h:outputText value="#{meeting.creationDate}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                    </h:outputText>
+                </p:column>
+
+                <p:column headerText="Data aktualizacji" filterMatchMode="contains" filterBy="#{utilsBean.getDateString(meeting.updateDate)}" sortBy="#{meeting.updateDate}">
+                    <h:outputText value="#{meeting.updateDate}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                    </h:outputText>
+                </p:column>
+
+
+                <p:column headerText="Akcje" styleClass="action-column">
+                    <p:commandButton id="viewButton" action="#{meetingBean.details()}" title="Szczegóły" icon="ui-icon ui-icon-note">
+                        <f:setPropertyActionListener value="#{meeting}" target="#{meetingBean.selectedMeeting}" />
+                    </p:commandButton>
+
+                </p:column>
+            </p:dataTable>
+
+            </p:panel>
+
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>

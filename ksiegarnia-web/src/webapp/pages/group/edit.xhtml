@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<f:metadata>
+    <f:viewParam name="id" value="#{groupBean.id}" />
+    <f:event type="preRenderView" listener="#{groupBean.initEdit}"/>
+</f:metadata>
+
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:o="http://omnifaces.org/ui"
+                xmlns:of="http://omnifaces.org/functions"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Dane elementu bazy wiedzy</ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="0" />
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="content">
+        <ui:include src="/modules/account_tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="4" />
+        </ui:include>
+
+        <h:form id="detailsForm" rendered="#{not empty groupBean.selectedItem}">
+            <p:growl id="growl" showDetail="true" />
+
+            <p:panelGrid columns="2">
+                <h:outputLabel value="ID: " />
+                <p:inputText id="id" value="#{groupBean.selectedItem.id}" readonly="true" />
+
+                <h:outputLabel for="key" value="Nazwa:"/>
+                <p:inputText id="key" value="#{groupBean.selectedItem.name}" maxlength="255" size="120" required="true" requiredMessage="Pole jest obowiązkowe" validatorMessage="Niepoprawny format nazzwy: podaj tylko litery i cyfry oddzielone znakiem podkreślenia lub białym znakiem" readonly="#{sessionBean.viewMode}" >
+                    <f:validateRegex pattern="^[\u0400-\u04FFa-zA-Z0-9\s]+(_[\u0400-\u04FFa-zA-Z0-9\s]+)*$" />
+                </p:inputText>
+
+
+                <h:outputLabel for="content1" value="Notka:"/>
+                <p:column colspan="3">
+                    <p:inputTextarea id="content1" rows="4" cols="100" value="#{groupBean.selectedItem.comment}" readonly="#{sessionBean.viewMode}" />
+                </p:column>
+
+                <h:outputLabel for="pickList" value="Członkowie grupy:"/>
+                <p:column  colspan="3">
+                    <p:pickList id="pickList" value="#{groupBean.accounts}" var="account" itemLabel="#{account.login}"  itemValue="#{account}"   converter="entityConverter" styleClass="ui-resizable">
+
+                        <f:facet name="sourceCaption">Lista kont</f:facet>
+                        <f:facet name="targetCaption">Konta grupy "#{groupBean.selectedItem.name}"</f:facet>
+                    </p:pickList>
+                </p:column>
+
+                <f:facet name="footer">
+                    <p:commandButton value="Zapisz" icon="ui-icon-disk" action="#{groupBean.save()}" update="@form"  />
+                    <p:commandButton value="Powrót do listy" icon="ui-icon-cancel" action="#{groupBean.list()}" process="@this" />
+                </f:facet>
+            </p:panelGrid>
+        </h:form>
+
+
+    </ui:define>
+</ui:composition>
+
+</html>

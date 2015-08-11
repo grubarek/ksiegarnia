@@ -1,0 +1,61 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Grupy użytkowników</ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="0" />
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form id="listForm">
+            <ui:include src="/modules/account_tab_menu.xhtml">
+                <ui:param name="selectedTabIndex" value="4" />
+            </ui:include>
+
+            <p:dataTable var="group" id="table" value="#{groupBean.groups}" widgetVar="groupsTable" emptyMessage="Nie ma jeszcze żadnej grupy." paginator="true" rows="10" paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}">
+                <f:facet name="header">
+                    <p:commandButton value="Nowa grupa" icon="ui-icon-plus" action="#{groupBean.newItem()}" update=":blockForm:growl" disabled="#{not request.isUserInRole('ADMIN')}" />
+                    <p:outputPanel style="float: right;">
+                        <h:outputText value="Szukaj:" />
+                        <p:inputText id="globalFilter" onkeyup="groupsTable.filter()" style="width:150px; margin-left: 10px;" />
+                    </p:outputPanel>
+                </f:facet>
+
+                <p:column headerText="ID" filterMatchMode="contains" filterBy="#{group.id}" sortBy="#{group.id}" styleClass="wrap-text">#{group.id}</p:column>
+                <p:column headerText="Nazwa grupy" filterMatchMode="contains" filterBy="#{group.name}" sortBy="#{group.name}" styleClass="wrap-text">#{group.name}</p:column>
+                <p:column headerText="Notka, komentarz" filterMatchMode="contains" filterBy="#{group.comment}" sortBy="#{group.comment}" styleClass="wrap-text">#{group.comment}</p:column>
+
+
+ 
+                <p:column headerText="Akcje" styleClass="action-column">
+                    <p:commandButton id="selectButton" action="#{groupBean.edit()}" title="Edytuj" icon="ui-icon ui-icon-pencil" rendered="#{request.isUserInRole('AGENT PREMIUM') or request.isUserInRole('ADMIN')}">
+                        <f:setPropertyActionListener value="#{group}" target="#{groupBean.selectedItem}" />
+                    </p:commandButton>
+
+                    <p:commandButton id="deleteButton"   oncomplete="removeConfirmation.show()" update=":listForm:confirmationDialog" title="Usuń" icon="ui-icon ui-icon-trash" disabled="#{not request.isUserInRole('ADMIN')}">
+                        <f:setPropertyActionListener value="#{group}" target="#{groupBean.selectedItem}" />
+                    </p:commandButton>
+                </p:column>
+            </p:dataTable>
+
+            <ui:include src="/modules/remove_item_dialog.xhtml">
+                <ui:param name="message" value="Czy chcesz usunąć grupę '#{groupBean.selectedItem.name}'?" />
+                <ui:param name="header" value="Usuwanie grupy" />
+                <ui:param name="update" value=":listForm:table" />
+                <ui:param name="bean" value="#{groupBean}" />
+            </ui:include>
+        </h:form>
+
+        <h:outputText value="Ma uprawnienie tylko do poglądu swojego konta" rendered="#{ not request.isUserInRole('AGENT PREMIUM') and not request.isUserInRole('ADMIN') }" style="font-size: 16px; color: #c72a00;" />
+        <h:outputText value="Ma uprawnienie do poglądu i edycji tylko swojego konta" rendered="#{request.isUserInRole('AGENT PREMIUM') and not request.isUserInRole('ADMIN')}" style="font-size: 16px; color: #c72a00;" />
+
+    </ui:define>
+
+</ui:composition>

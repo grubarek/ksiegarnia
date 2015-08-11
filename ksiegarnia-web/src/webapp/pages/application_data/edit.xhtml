@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<f:metadata>
+    <f:viewParam name="id" value="#{applicationDataBean.id}" />
+</f:metadata>
+
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:o="http://omnifaces.org/ui"
+                xmlns:of="http://omnifaces.org/functions"
+                xmlns:p="http://primefaces.org/ui">
+
+<ui:define name="title">Dane aplikacji</ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="2" />
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="content">
+        <ui:include src="/modules/data_tab_menu.xhtml">
+            <ui:param name="selectedSubTabIndex" value="1" />
+        </ui:include>
+
+        <h:form id="detailsForm" rendered="#{not empty applicationDataBean.selectedEntry}">
+            <p:growl id="growl" showDetail="true" />
+
+            <p:panelGrid columns="4">
+                <h:outputLabel value="ID: " />
+                <p:inputText id="id" value="#{applicationDataBean.selectedEntry.id}" readonly="true" />
+
+                <h:outputLabel for="key" value="Klucz:"/>
+                <p:inputText id="key" value="#{applicationDataBean.selectedEntry.name}" maxlength="30" readonly="true" />
+
+                <h:outputLabel for="value" value="Wartość:*"/>
+                <p:inputTextarea id="value" rows="6" cols="80" value="#{applicationDataBean.selectedEntry.value}" required="true" requiredMessage="Wartość jest obowiązkowa" readonly="#{sessionBean.viewMode}"/>
+
+                <h:outputLabel for="empty1" value="&nbsp;" />
+                <h:outputText id="empty1"  value="&nbsp;" />
+
+                <h:outputLabel for="creationDate" value="Data utworzenia:" rendered="#{not sessionBean.newMode}" />
+                <h:outputText id="creationDate"  value="#{applicationDataBean.selectedEntry.creationDate}" rendered="#{not sessionBean.newMode}">
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+                <h:outputLabel for="updateDate" value="Data aktualizacji:" rendered="#{not sessionBean.newMode}" />
+                <h:outputText id="updateDate"  value="#{applicationDataBean.selectedEntry.updateDate}" rendered="#{not sessionBean.newMode}">
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+
+                <f:facet name="footer">
+                    <p:commandButton value="Zapisz" icon="ui-icon-disk" action="#{applicationDataBean.save()}" update="@form"  />
+                    <p:commandButton value="Powrót do listy" icon="ui-icon-cancel" action="#{applicationDataBean.list()}" process="@this" />
+                </f:facet>
+            </p:panelGrid>
+
+        </h:form>
+
+    </ui:define>
+</ui:composition>
+
+</html>

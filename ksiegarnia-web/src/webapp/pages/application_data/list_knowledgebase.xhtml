@@ -1,0 +1,66 @@
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:o="http://omnifaces.org/ui"
+                xmlns:of="http://omnifaces.org/functions"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Elementy bazy wiedzy</ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="2" />
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form id="listForm">
+            <ui:include src="/modules/data_tab_menu.xhtml">
+                <ui:param name="selectedSubTabIndex" value="4" />
+            </ui:include>
+
+            <p:dataTable var="knowledgeBaseItem" id="table" value="#{knowledgeBaseBean.knowledgeBaseItems}" widgetVar="knowledgeBaseItemsTable" emptyMessage="Nie ma jeszcze żadnych wpisów." paginator="true" rows="10" paginatorTemplate="{PreviousPageLink} {PageLinks} {NextPageLink}">
+                <f:facet name="header">
+                    <p:commandButton value="Nowy element" icon="ui-icon-plus" action="#{knowledgeBaseBean.newItem()}" update=":blockForm:growl" disabled="#{not request.isUserInRole('ADMIN')}" />
+                    <p:outputPanel style="float: right;">
+                        <h:outputText value="Szukaj:" />
+                        <p:inputText id="globalFilter" onkeyup="knowledgeBaseItemsTable.filter()" style="width:150px; margin-left: 10px;" />
+                    </p:outputPanel>
+                </f:facet>
+
+                <p:column headerText="ID" filterMatchMode="contains" filterBy="#{knowledgeBaseItem.id}" sortBy="#{knowledgeBaseItem.id}" styleClass="wrap-text">#{knowledgeBaseItem.id}</p:column>
+                <p:column headerText="Nazwa" filterMatchMode="contains" filterBy="#{knowledgeBaseItem.name}" sortBy="#{knowledgeBaseItem.name}" styleClass="wrap-text">#{knowledgeBaseItem.name}</p:column>
+                <p:column headerText="URL" filterMatchMode="contains" filterBy="#{knowledgeBaseItem.url}" sortBy="#{knowledgeBaseItem.url}" styleClass="wrap-text">#{knowledgeBaseItem.url}</p:column>
+
+
+                <p:column headerText="Data utworzenia" filterMatchMode="contains" filterBy="#{utilsBean.getDateString(knowledgeBaseItem.creationDate)}"  sortBy="#{knowledgeBaseItem.creationDate}">
+                    <h:outputText value="#{knowledgeBaseItem.creationDate}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                    </h:outputText>
+                </p:column>
+                <p:column headerText="Data aktualizacji" filterMatchMode="contains" filterBy="#{utilsBean.getDateString(knowledgeBaseItem.updateDate)}" sortBy="#{knowledgeBaseItem.updateDate}">
+                    <h:outputText value="#{knowledgeBaseItem.updateDate}">
+                        <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                    </h:outputText>
+                </p:column>
+
+
+                <p:column headerText="Akcje" styleClass="action-column">
+                    <p:commandButton id="selectButton" action="#{knowledgeBaseBean.edit()}" title="Edytuj" icon="ui-icon ui-icon-pencil">
+                        <f:setPropertyActionListener value="#{knowledgeBaseItem}" target="#{knowledgeBaseBean.selectedItem}" rendered="#{request.isUserInRole('ADMIN')}" />
+                    </p:commandButton>
+
+                    <p:commandButton id="viewButton" action="#{knowledgeBaseBean.details()}" title="Szczegóły" icon="ui-icon ui-icon-note">
+                        <f:setPropertyActionListener value="#{knowledgeBaseItem}" target="#{knowledgeBaseBean.selectedItem}" />
+                    </p:commandButton>
+
+                </p:column>
+            </p:dataTable>
+
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>

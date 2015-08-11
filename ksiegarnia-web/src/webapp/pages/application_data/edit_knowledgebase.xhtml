@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<f:metadata>
+    <f:viewParam name="id" value="#{knowledgeBaseBean.id}" />
+</f:metadata>
+
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:o="http://omnifaces.org/ui"
+                xmlns:of="http://omnifaces.org/functions"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Dane elementu bazy wiedzy</ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="2" />
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="content">
+        <ui:include src="/modules/data_tab_menu.xhtml">
+            <ui:param name="selectedSubTabIndex" value="4" />
+        </ui:include>
+
+        <h:form id="detailsForm" rendered="#{not empty knowledgeBaseBean.selectedItem}">
+            <p:growl id="growl" showDetail="true" />
+
+            <p:panelGrid columns="2">
+                <h:outputLabel value="ID: " />
+                <p:inputText id="id" value="#{knowledgeBaseBean.selectedItem.id}" readonly="true" />
+
+                <h:outputLabel for="key" value="Nazwa:"/>
+                <p:inputText id="key" value="#{knowledgeBaseBean.selectedItem.name}" maxlength="255" size="120" required="true" requiredMessage="Pole jest obowiązkowe" validatorMessage="Niepoprawny format nazzwy: podaj tylko litery i cyfry oddzielone znakiem podkreślenia" readonly="#{sessionBean.viewMode}" >
+                    <f:validateRegex pattern="^[\u0400-\u04FFa-zA-Z0-9]+(_[\u0400-\u04FFa-zA-Z0-9]+)*$" />
+                </p:inputText>
+
+                <h:outputLabel for="tags" value="Tagi:" />
+                <p:inputText id="tags" value="#{knowledgeBaseBean.selectedItem.tags}" size="120" readonly="#{sessionBean.viewMode}" required="true" requiredMessage="Podaj słowa odzielone przecinkami" validatorMessage="Niepoprawny format: podaj słowa oddzielone przecinkami">
+                    <f:validateRegex pattern="^[\u0400-\u04FFa-zA-Z0-9_\- ]+(,[\u0400-\u04FFa-zA-Z0-9_\- ]+)*$" />
+                </p:inputText>
+
+                <h:outputLabel for="ext_url" value="URL:" />
+                <p:inputText id="ext_url" value="#{knowledgeBaseBean.selectedItem.url}" size="120" readonly="#{sessionBean.viewMode}" validatorMessage="Niepoprawny format URL">
+                    <f:validateRegex pattern="^(https?)://[-a-zA-Z0-9+[&amp;]@#/%?=~_|!:,.;]*[-a-zA-Z0-9+[&amp;]@#/%=~_|]" />
+                </p:inputText>
+
+                <h:outputLabel for="content1" value="Content:"/>
+                <p:column colspan="3">
+                    <p:inputTextarea id="content1" rows="10" cols="100" value="#{knowledgeBaseBean.selectedItem.content}" readonly="#{sessionBean.viewMode}" />
+                </p:column>
+
+
+                <h:outputLabel for="creationDate" value="Data utworzenia:" rendered="#{not sessionBean.newMode}" />
+                <h:outputText id="creationDate"  value="#{knowledgeBaseBean.selectedItem.creationDate}" rendered="#{not sessionBean.newMode}">
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+                <h:outputLabel for="updateDate" value="Data aktualizacji:" rendered="#{not sessionBean.newMode}" />
+                <h:outputText id="updateDate"  value="#{knowledgeBaseBean.selectedItem.updateDate}" rendered="#{not sessionBean.newMode}">
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+                <f:facet name="footer">
+                    <p:commandButton value="Zapisz" icon="ui-icon-disk" action="#{knowledgeBaseBean.save()}" update="@form"  />
+                    <p:commandButton value="Powrót do listy" icon="ui-icon-cancel" action="#{knowledgeBaseBean.list()}" process="@this" />
+                </f:facet>
+
+            </p:panelGrid>
+
+            <!-- Dodawanie załączników - start -->
+            <h3>Załączniki</h3>
+
+            <p:contextMenu for="attachments">
+                <p:menuitem value="Edytuj" update="attachments" icon="ui-icon-pencil"  onclick="editAttachmentDialog.show();" />
+                <p:menuitem value="Usuń" update="attachments" icon="ui-icon-close" actionListener="#{knowledgeBaseBean.deleteAttachment()}" />
+            </p:contextMenu>
+
+            <p:dataTable id="attachments" var="attachment" value="#{knowledgeBaseBean.selectedItemAttachments}" emptyMessage="Nie ma jeszcze żadnego załącznika lub załącznik nie został zapisany." selectionMode="single" selection="#{knowledgeBaseBean.selectedAttachment}" rowKey="#{attachment.id}">
+                <p:column headerText="Załącznik">
+                    <p:commandButton value="Pobierz plik" icon="ui-icon-attachment" action="#{knowledgeBaseBean.generateAttachment(attachment.id)}" ajax="false" />
+                </p:column>
+
+                <p:column headerText="Typ">
+                    #{attachment.type}
+                </p:column>
+
+                <p:column headerText="url">
+                    #{attachment.url}
+                </p:column>
+
+
+            </p:dataTable>
+            <!-- Dodawanie załączników - koniec -->
+        </h:form>
+
+
+        <h:form id="uploadAttachmentForm" enctype="multipart/form-data">
+            <p:growl id="growlUpload" showDetail="true" />
+
+            <p:fileUpload fileUploadListener="#{knowledgeBaseBean.uploadAttachment}" mode="advanced" sizeLimit="500000" invalidSizeMessage="Maksymalny dopuszczalny rozmiar pliku to 500kB"  dragDropSupport="true" update=":detailsForm:growl, :detailsForm:attachments" allowTypes="/(\.|\/)(gif|jpe?g|png|pdf)$/" multiple="true" label="Wybierz" cancelLabel="Anuluj" />
+        </h:form>
+
+        <p:dialog header="Edycja dokumentu" widgetVar="editAttachmentDialog" resizable="false" modal="true">
+            <h:form id="editAttachmentForm">
+                <h:panelGrid columns="2">
+                    <h:outputLabel for="type" value="Typ:"/>
+                    <p:inputText id="type" value="#{knowledgeBaseBean.selectedAttachment.type}" maxlength="255" />
+
+                    <h:outputLabel for="content" value="Content:"/>
+                    <p:inputText id="content" value="#{knowledgeBaseBean.selectedAttachment.content}" maxlength="255" />
+
+                    <h:outputLabel for="url" value="URL:"/>
+                    <p:inputText id="url" value="#{knowledgeBaseBean.selectedAttachment.url}" maxlength="255" />
+
+
+
+                </h:panelGrid>
+
+                <p:commandButton id="submitButton" icon="ui-icon-plus" value="Zapisz" update=":detailsForm:attachments" oncomplete="editAttachmentDialog.hide();" actionListener="#{knowledgeBaseBean.editAttachment()}"/>
+                <p:commandButton value="Anuluj" icon="ui-icon-cancel" onclick="editAttachmentDialog.hide();" process="@this" />
+            </h:form>
+        </p:dialog>
+
+
+
+
+    </ui:define>
+</ui:composition>
+
+</html>

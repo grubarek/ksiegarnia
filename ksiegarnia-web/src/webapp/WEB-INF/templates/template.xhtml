@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>
+        Aegon SalesApp CMS - <ui:insert name="title"></ui:insert>
+    </title>
+    
+    <meta http-equiv="x-ua-compatible" content="IE=9" />
+    <h:outputStylesheet library="css" name="main.css" />
+</h:head>
+
+<h:body>
+    <!-- Kontrolki dla edytora w całym CMSie -->
+    <ui:param name="editorControls" value="bold italic underline subscript superscript numbering removeformat link image alignleft center alignright justify" />
+
+	<div id="header" class="clearfix">
+		<div id="logo">
+			<h:link outcome="#{sessionBean.getHomePage()}">
+				<h:graphicImage library="img" name="logo.png" alt="Aegon logo" />
+			</h:link>
+		</div>
+		<ui:fragment rendered="#{sessionBean.isLogged()}">
+			<h:form id="logout">
+				<p:commandLink styleClass="menulink" action="#{loginBean.logout}" value="Wyloguj" />
+			</h:form>
+		</ui:fragment>
+        <ui:fragment rendered="#{not sessionBean.isLogged()}">
+            <p style="text-align: right; font-family: Arial, Sans-Serif; font-size: 0.8em; color: #ddd;">
+                Wersja 20150708
+            </p>
+        </ui:fragment>
+
+    </div>
+
+	<p:outputPanel layout="block" id="pageContainer"
+		styleClass="page-wrapper">
+
+	    <ui:fragment rendered="false">
+		<ui:insert name="header">
+			<h:form>
+            <p:outputPanel id="header" styleClass="top-page top-header" layout="block">
+                <p:outputPanel id="logo" styleClass="company-logo left-column">
+                    <p:commandLink value="Logo" action="#{sessionBean.getHomePage()}" />
+				</p:outputPanel>
+				<p:outputPanel id="rightTopMenu"
+					styleClass="right-column right-column-standar-margin">
+					<p:outputPanel id="top-right-user-menu-wrapper" styleClass="right-column" layout="block">
+						<p:commandLink value="Wyloguj" action="#{loginBean.logout}" /><br />
+					</p:outputPanel>
+				</p:outputPanel>
+			</p:outputPanel>
+            </h:form>
+		</ui:insert>
+		</ui:fragment>
+
+		<ui:fragment rendered="#{sessionBean.isLogged()}">
+		<p:outputPanel id="tab">
+			<h:form id="blockForm" prependId="false">
+				<p:growl id="growl" showDetail="true" globalOnly="true" autoUpdate="true" />
+				<ui:insert name="menu"></ui:insert>
+			</h:form>
+		</p:outputPanel>
+		</ui:fragment>
+
+		<p:outputPanel id="contentWrapper" layout="block" rendered="#{sessionBean.shouldRenderContent()}">
+			<ui:insert name="content">
+
+			</ui:insert>
+
+            <p:ajaxStatus style="width: 55px; height: 55px; position: absolute; left: 50%; top: 50%; z-index: 99999">
+                <f:facet name="start">
+                    <p:graphicImage value="#{resource['img:ajax-loader.gif']}" />
+                </f:facet>
+
+                <f:facet name="complete">
+                    <h:outputText value="" />
+                </f:facet>
+            </p:ajaxStatus>
+		</p:outputPanel>
+
+        <h:form>
+            <p:outputPanel layout="block" rendered="#{not sessionBean.shouldRenderContent()}">
+                <h:outputText value="Błąd uprawnień" style="font-size: 16px; color: #c72a00; padding-top: 30px;" />
+            </p:outputPanel>
+        </h:form>
+
+	</p:outputPanel>
+</h:body>
+
+</html>
+
+
+
+
+

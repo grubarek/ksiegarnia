@@ -1,0 +1,11 @@
+<ui:composition
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui">
+
+    <p:confirmDialog message="#{message}" header="#{header}" severity="alert" widgetVar="removeConfirmation" process="@this" id="confirmationDialog">
+        <p:commandButton value="Tak" action="#{bean[beanAction]}" process="@this" icon="ui-icon-check" update="#{update}" rendered="#{not empty beanAction}" />
+        <p:commandButton value="Tak" action="#{bean.delete()}" process="@this" icon="ui-icon-check" update="#{update}" rendered="#{empty beanAction}" />
+
+        <p:commandButton value="Nie" onclick="removeConfirmation.hide()" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close"/>
+    </p:confirmDialog>
+</ui:composition>

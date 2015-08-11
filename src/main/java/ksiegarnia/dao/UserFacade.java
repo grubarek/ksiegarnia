@@ -21,10 +21,29 @@ public class UserFacade extends AbstractFacade implements  UserDao {
 	}
 
 	@Override
-	public String toString() {
-		return "UserFacade []";
+	public boolean deleteUser(long userId) throws DaoException{
+		logger.info("delete user" + userId);
+		try{
+			User user = em.find(User.class, userId);
+			em.remove(user);
+			return true;
+		}catch (Exception e){
+			throw new DaoException(e);
+		}
 	}
-	
+
+	@Override
+	public boolean updateUser(User user) throws DaoException{
+		logger.info("updateUseer - invoked for: " + user.getLogin());
+		try{
+			em.merge(user);
+			return true;
+		}catch (Exception e){
+			throw new DaoException(e);
+		}
+	}
+
+
 
 
 }

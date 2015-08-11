@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<f:metadata>
+    <f:viewParam name="id" value="#{accountBean.accountId}" />
+</f:metadata>
+
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+<ui:define name="title">Konto</ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="0" />
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="content">
+        <ui:include src="/modules/account_tab_menu.xhtml">
+            <ui:param name="selectedSubTabIndex" value="1" />
+        </ui:include>
+
+        <h:form id="detailsForm" rendered="#{not empty accountBean.selectedAccount}">
+            <p:growl id="growl" showDetail="true" />
+
+            <p:panelGrid columns="4">
+                <h:outputLabel value="ID: " />
+                <p:inputText id="id" value="#{accountBean.selectedAccount.id}" readonly="true" rendered="#{not sessionBean.newMode}" />
+                <h:outputText value="zostanie nadane automatycznie" rendered="#{sessionBean.newMode}" />
+
+                <h:outputLabel for="author" value="login:*"/>
+                <p:inputText id="author" value="#{accountBean.selectedAccount.login}" required="true" requiredMessage="Login jest obowiązkowy" maxlength="30" readonly="#{sessionBean.viewMode}" />
+
+                <h:outputLabel for="fname" value="Imię:*"/>
+                <p:inputText id="fname" value="#{accountBean.selectedAccount.firstName}" required="true" requiredMessage="Imię jest obowiązkowe" maxlength="60" readonly="#{sessionBean.viewMode}" />
+
+                <h:outputLabel for="lname" value="Nazwisko:*"/>
+                <p:inputText id="lname" value="#{accountBean.selectedAccount.lastName}" required="true" requiredMessage="Nazwisko jest obowiązkowe" maxlength="40" readonly="#{sessionBean.viewMode}" />
+
+                <h:outputLabel for="sf" value="Salesforce ID:"/>
+                <p:inputText id="sf" value="#{accountBean.selectedAccount.salesforceId}" required="false" maxlength="40" readonly="#{sessionBean.viewMode}" />
+
+                <h:outputLabel for="aeg" value="Aegon ID:"/>
+                <p:inputText id="aeg" value="#{accountBean.selectedAccount.aegonId}" required="false" maxlength="40" readonly="#{sessionBean.viewMode}" />
+
+                <h:outputLabel for="sfl" value="Salesforce login:"/>
+                <p:inputText id="sfl" value="#{accountBean.selectedAccount.salesforceLogin}" required="true" maxlength="40" readonly="#{sessionBean.viewMode}" requiredMessage="Musisz podać login do Salesforce" />
+
+                <h:outputLabel for="passS" value="Hasło salesforce:*" rendered="#{not sessionBean.viewMode}" />
+                <p:password id="passS" value="#{accountBean.salesforcePassword}" required="#{sessionBean.newMode}" requiredMessage="Musisz podać hasło do Salesforce"  feedback="true" />
+
+
+                <h:outputLabel for="ossl" value="OSS login:"/>
+                <p:inputText id="ossl" value="#{accountBean.selectedAccount.ossLogin}" required="true" maxlength="40" readonly="#{sessionBean.viewMode}" requiredMessage="Musisz podać login do OSS" />
+
+                <h:outputLabel for="passOSS" value="Hasło OSS:*" rendered="#{not sessionBean.viewMode}" />
+                <p:password id="passOSS" value="#{accountBean.ossPassword}" required="#{sessionBean.newMode}" requiredMessage="Musisz podać hasło do OSS"  feedback="true" >
+
+
+                </p:password>
+
+
+                <h:outputLabel for="pass1" value="Hasło:*" rendered="#{not sessionBean.viewMode}" />
+                <p:password id="pass1" value="#{accountBean.password}" required="#{sessionBean.newMode}" requiredMessage="Musisz podać hasło" validatorMessage="Hasło musi mieć min. 8 znaków oraz zawierać jedną małą, jedną dużą literę, jedna cyfrę i jeden znak specjalny" feedback="true" rendered="#{not sessionBean.viewMode}" >
+                    <f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,80})" />
+                </p:password>
+
+                <h:outputLabel for="pass1" value="Potwierdzenia hasła:*" rendered="#{not sessionBean.viewMode}"/>
+                <p:password id="pass2" value="#{accountBean.password2}" required="#{sessionBean.newMode}" requiredMessage="Musisz potwierdzić hasło" feedback="false" rendered="#{not sessionBean.viewMode}"/>
+
+                <h:outputLabel for="pin" value="PIN:*" rendered="#{not sessionBean.viewMode}" />
+                <p:password id="pin" value="#{accountBean.pin}" required="#{sessionBean.newMode}" requiredMessage="Musisz podać PIN" validatorMessage="PIN musi się składać z minimum 6 liczb (zakres 1-16) odzielonych znakiem '-'" feedback="false" rendered="#{not sessionBean.viewMode}" >
+                    <f:validateRegex pattern="([0-9]{1,2}\-){5,}[0-9]{1,2}" />
+                </p:password>
+
+                <h:outputLabel for="status" value="Status:*"/>
+                <p:column style="text-align: center">
+                    <p:selectOneMenu id="status" value="#{accountBean.selectedAccount.status}" disabled="#{not request.isUserInRole('ADMIN')}" readonly="#{sessionBean.viewMode}" >
+                        <f:selectItems value="#{accountBean.statuses}" var="AccountStatus" itemLabel="#{AccountStatus.name}" itemValue="#{AccountStatus.status}" />
+                    </p:selectOneMenu>
+                </p:column>
+
+                <h:outputLabel for="hobby" value="Hobby:"/>
+                <p:inputTextarea id="hobby" rows="6" cols="40" value="#{accountBean.selectedAccount.hobby}" required="false" readonly="#{sessionBean.viewMode}"/>
+
+
+                <h:outputLabel for="desc" value="Opis:*"/>
+                <p:inputTextarea id="desc" rows="6" cols="80" value="#{accountBean.selectedAccount.agentDescription}" required="true" requiredMessage="Opis jest obowiązkowy" readonly="#{sessionBean.viewMode}"/>
+
+                <h:outputLabel for="img" value="Nowy avatar:"/>
+                <p:fileUpload id="img" fileUploadListener="#{accountBean.uploadFile}" mode="advanced" sizeLimit="500000" invalidSizeMessage="Maksymalny dopuszczalny rozmiar pliku graficznego to 500kB" dragDropSupport="true" update="@form" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true" label="Wybierz" cancelLabel="Anuluj" />
+
+                <h:outputLabel for="img" value="Avatar: "/>
+                <p:graphicImage value="#{avatarStreamerBean.image}" style="max-width: 150px; max-height: 150px;" rendered="#{not empty accountBean.selectedAccount.avatar}">
+                    <f:param name="id" value="#{accountBean.selectedAccount.id}" />
+                </p:graphicImage>
+                <h:outputText value="brak" rendered="#{empty accountBean.selectedAccount.avatar}" />
+
+
+                <h:outputLabel for="roles" value="Prawa dostępu:*"/>
+                <p:column style="text-align: center">
+                    <p:selectCheckboxMenu id="roles" value="#{accountBean.selectedAccountRoleIds}" label="Prawa dostępu" collectionType="java.util.HashSet" style="float: left" readonly="#{sessionBean.viewMode}" rendered="#{request.isUserInRole('ADMIN')}">
+                        <f:selectItems value="#{accountBean.allRoles}" var="role" itemLabel="#{role.name}" itemValue="#{role.id}" />
+                    </p:selectCheckboxMenu>
+                    <h:outputText value="#{sessionBean.loggedInRoleName}" rendered="#{not request.isUserInRole('ADMIN')}" />
+
+                </p:column>
+
+                <h:outputLabel for="tel" value="Nr telefonu:"/>
+                <p:inputText id="tel" value="#{accountBean.selectedAccount.telephoneNo}" required="false" maxlength="20" readonly="#{sessionBean.viewMode}" />
+
+                <h:outputLabel for="creationDate" value="Data utworzenia:" rendered="#{not sessionBean.newMode}" />
+                <h:outputText id="creationDate"  value="#{accountBean.selectedAccount.creationDate}" rendered="#{not sessionBean.newMode}">
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+
+                <h:outputLabel for="updateDate" value="Data aktualizacji:" rendered="#{not sessionBean.newMode}" />
+                <h:outputText id="updateDate"  value="#{accountBean.selectedAccount.updateDate}" rendered="#{not sessionBean.newMode}">
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+                <h:outputLabel for="loginDate" value="Data logowania:" rendered="#{not sessionBean.newMode}" />
+                <h:outputText id="loginDate"  value="#{accountBean.selectedAccount.lastLoginDate}" rendered="#{not sessionBean.newMode}">
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+
+                <h:outputLabel for="group" value="Grupa:"/>
+                <p:column style="text-align: center">
+                    <p:selectOneMenu id="group" value="#{accountBean.selectedAccountGroupId}"  readonly="#{sessionBean.viewMode}" disabled="#{not request.isUserInRole('ADMIN')}" >
+                        <f:selectItem itemLabel="Wszyscy" itemValue="0" />
+                        <f:selectItems value="#{accountBean.groups}" var="group" itemLabel="#{group.name}" itemValue="#{group.id}" />
+                    </p:selectOneMenu>
+                </p:column>
+
+
+                <f:facet name="footer">
+                    <p:commandButton value="Zapisz" icon="ui-icon-disk" action="#{accountBean.save()}" update="@form" rendered="#{request.isUserInRole('AGENT PREMIUM') or request.isUserInRole('ADMIN')}" />
+                    <p:commandButton value="Dezaktywuj" icon="ui-icon-trash" onclick="removeConfirmation.show()" process="@this" rendered="#{not empty accountBean.selectedAccount.id}" disabled="#{not request.isUserInRole('ADMIN')}" />
+                    <p:commandButton value="Powrót do listy kont" icon="ui-icon-cancel" action="#{accountBean.list()}" process="@this" />
+                    <p:commandButton value="Lista spotkań agenta" icon="ui-icon-cancel" action="#{accountBean.meetings()}" process="@this" />
+                </f:facet>
+            </p:panelGrid>
+
+            <ui:include src="/modules/remove_item_dialog.xhtml">
+                <ui:param name="message" value="Czy chcesz usunąć konto '#{accountBean.selectedAccount.login}'?" />
+                <ui:param name="header" value="Usuwanie konta" />
+                <ui:param name="update" value=":blockForm:growl" />
+                <ui:param name="bean" value="#{accountBean}" />
+            </ui:include>
+
+            <!-- Urządzenie użytkownika -->
+            <h3>Urządzenia użytkownika</h3>
+            <p:dataTable id="devices" var="device" value="#{accountBean.userDevices}" emptyMessage="Brak urządzeń dla podanego konta." selectionMode="single" selection="#{accountBean.selectedDevice}" rowKey="#{device.id}">
+
+                <p:column headerText="ID">
+                    #{device.id}
+                </p:column>
+
+                <p:column headerText="Platforma">
+                    #{device.platform}
+                </p:column>
+
+                <p:column headerText="Wersja systemu operacyjnego">
+                    #{device.osVersion}
+                </p:column>
+
+                <p:column headerText="Producent">
+                    #{device.vendor}
+                </p:column>
+
+                <p:column headerText="Model">
+                    #{device.model}
+                </p:column>
+
+                <p:column headerText="ID urządzenia">
+                    #{device.deviceId}
+                </p:column>
+
+                <h:outputLabel for="creationDate2" value="Data utworzenia:" />
+                <h:outputText id="creationDate2"  value="#{device.creationDate}" >
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+
+                <h:outputLabel for="updateDate2" value="Data aktualizacji:" />
+                <h:outputText id="updateDate2"  value="#{device.updateDate}" >
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+
+                <p:column headerText="Status">
+                    #{accountBean.getDeviceStatusAsString(device.status)}
+                </p:column>
+
+                <p:column headerText="Akcja" styleClass="action-column">
+
+                    <p:commandButton id="blockButton" action="#{accountBean.blockUnblockDevice()}" title="Zablokuj" icon="#{utilsBean.getIconByStatus(device.status)}" rendered="#{request.isUserInRole('ADMIN')}">
+                        <f:setPropertyActionListener value="#{device}" target="#{accountBean.selectedDevice}" />
+                    </p:commandButton>
+
+                </p:column>
+            </p:dataTable>
+
+
+            <!-- Dodawanie certyfikatów - start -->
+            <h3>Certyfikaty i inne dokumenty</h3>
+
+            <p:contextMenu for="documents">
+                <p:menuitem value="Edytuj" update="documents" icon="ui-icon-pencil"  onclick="editDocumentDialog.show();" />
+                <p:menuitem value="Usuń" update="documents" icon="ui-icon-close" actionListener="#{accountBean.deleteDocument}" />
+            </p:contextMenu>
+
+            <p:dataTable id="documents" var="document" value="#{accountBean.documents}" emptyMessage="Nie ma jeszcze żadnego dokumentu lub dokument nie został zapisany." selectionMode="single" selection="#{accountBean.selectedDocument}" rowKey="#{document.id}">
+                <p:column headerText="Dokument">
+                    <p:commandButton value="Pobierz plik" icon="ui-icon-document" action="#{accountBean.generateDocument(document.id)}" ajax="false" />
+                </p:column>
+
+                <p:column headerText="Nazwa">
+                    #{document.name}
+                </p:column>
+
+                <p:column headerText="Typ">
+                    #{document.typeId.name}
+                </p:column>
+
+                <p:column headerText="Status">
+                    #{accountBean.getDocumentStatusAsString(document.status)}
+                </p:column>
+
+            </p:dataTable>
+            <!-- Dodawanie certyfikatów - koniec -->
+
+        </h:form>
+
+
+    <h:form id="uploadDocumentForm" enctype="multipart/form-data">
+        <p:growl id="growlUpload" showDetail="true" />
+
+        <p:fileUpload fileUploadListener="#{accountBean.uploadDocument}" mode="advanced" sizeLimit="500000" invalidSizeMessage="Maksymalny dopuszczalny rozmiar pliku to 500kB"  dragDropSupport="true" update=":detailsForm:growl, :detailsForm:documents" allowTypes="/(\.|\/)(gif|jpe?g|png|pdf)$/" multiple="true" label="Wybierz" cancelLabel="Anuluj" />
+    </h:form>
+
+    <p:dialog header="Edycja dokumentu" widgetVar="editDocumentDialog" resizable="false" modal="true">
+        <h:form id="editDocumentForm">
+            <h:panelGrid columns="2">
+                <h:outputLabel for="caption" value="Nazwa:"/>
+                <p:inputText id="caption" value="#{accountBean.selectedDocument.name}" maxlength="255" />
+
+                <h:outputLabel value="Status:"/>
+                <p:selectOneMenu value="#{accountBean.selectedDocument.status}" >
+                    <f:selectItem itemLabel="Aktywny" itemValue="1" />
+                    <f:selectItem itemLabel="Usunięty" itemValue="0" />
+                </p:selectOneMenu>
+
+                <h:outputLabel for="doc_type" value="Typ dokumentu:*"/>
+                <p:column style="text-align: center">
+                    <p:selectOneMenu id="doc_type" value="#{accountBean.selectedDocumentTypeId}">
+                        <f:selectItems value="#{accountBean.documentTypes}" var="DocumentType" itemLabel="#{DocumentType.name}" itemValue="#{DocumentType.id}" />
+                    </p:selectOneMenu>
+                </p:column>
+
+
+            </h:panelGrid>
+
+            <p:commandButton id="submitButton" icon="ui-icon-plus" value="Zapisz" update=":detailsForm:documents" oncomplete="editDocumentDialog.hide();" actionListener="#{accountBean.editDocument()}"/>
+            <p:commandButton value="Anuluj" icon="ui-icon-cancel" onclick="editDocumentDialog.hide();" process="@this" />
+        </h:form>
+    </p:dialog>
+
+    </ui:define>
+
+</ui:composition>
+
+</html>

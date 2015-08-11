@@ -1,0 +1,56 @@
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="title">Logowanie</ui:define>
+
+    <!--
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="0" />
+        </ui:include>
+    </ui:define>
+    -->
+
+    <ui:define name="content">
+    	<ui:fragment>
+    		<h:form id="form_login">
+    			<p:growl id="growl" showDetail="true" />
+	    		<p:panelGrid>
+	    			<p:row>
+	    				<p:column colspan="2">
+							<h5>Logowanie</h5>
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<h:outputLabel value="Login" for="loginInputText" />
+						</p:column>
+						<p:column>
+							<p:inputText id="loginInputText" value="#{loginBean.login}" required="true" requiredMessage="Login jest wymagany" />
+							<p:watermark for="loginInputText" value="Wpisz login" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column>
+							<h:outputLabel value="Hasło" for="passwordInputText" />
+						</p:column>
+						<p:column>
+							<p:password id="passwordInputText" value="#{loginBean.password}" required="true" requiredMessage="Hasło jest wymagane" />
+							<p:watermark for="passwordInputText" value="Wpisz hasło" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="2">
+							<p:commandButton value="Zaloguj mnie" action="#{loginBean.login}" update="growl" />
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+			</h:form>
+		</ui:fragment>
+    </ui:define>
+
+</ui:composition>

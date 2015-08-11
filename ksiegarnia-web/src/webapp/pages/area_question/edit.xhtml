@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<f:metadata>
+    <f:viewParam name="id" value="#{areaQuestionBean.selectedBusinessFieldAttributeId}" />
+</f:metadata>
+
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+<ui:define name="title">Pytania do obszarów</ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="4" />
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="content">
+        <ui:include src="/modules/area_question_tab_menu.xhtml">
+            <ui:param name="selectedSubTabIndex" value="1" />
+        </ui:include>
+
+        <h:form id="detailsForm" rendered="#{not empty areaQuestionBean.selectedBusinessFieldAttribute}">
+            <p:growl id="growl" showDetail="true" />
+
+            <p:panelGrid columns="4">
+                <h:outputLabel value="ID: " />
+                <p:inputText id="id" value="#{areaQuestionBean.selectedBusinessFieldAttribute.id}" readonly="true" />
+
+                <h:outputLabel for="name" value="Nazwa:*"/>
+                <p:inputText id="name" value="#{areaQuestionBean.selectedBusinessFieldAttribute.name}" maxlength="100" required="true" requiredMessage="Wartość jest obowiązkowa" readonly="#{sessionBean.viewMode and not request.isUserInRole('ADMIN')}" />
+
+
+                <h:outputLabel for="type" value="Typ:"/>
+                <h:outputText id="type" value="#{areaQuestionBean.selectedBusinessFieldAttribute.type}" />
+
+                <h:outputLabel for="description" value="Opis:"/>
+                <p:inputTextarea id="description" rows="6" cols="80" value="#{areaQuestionBean.selectedBusinessFieldAttribute.description}"  readonly="#{sessionBean.viewMode and not request.isUserInRole('ADMIN')}"/>
+
+                <h:outputLabel for="sf_attr" value="Nazwa pola w saleforce:"/>
+                <p:inputText id="sf_attr" value="#{areaQuestionBean.selectedBusinessFieldAttribute.salesforceAttributeName}" size="40" maxlength="255" readonly="#{sessionBean.viewMode and not request.isUserInRole('ADMIN')}" />
+
+                <h:outputLabel for="sf_comment" value="Uwaga dla mapowania do SF:"/>
+                <p:inputText id="sf_comment" value="#{areaQuestionBean.selectedBusinessFieldAttribute.salesforceMappingComment}" size="40" maxlength="255" readonly="#{sessionBean.viewMode and not request.isUserInRole('ADMIN')}" />
+
+                <h:outputLabel for="upload" value="Nowa ikona:"/>
+                <p:fileUpload id="upload" fileUploadListener="#{areaQuestionBean.uploadFile}" mode="advanced" sizeLimit="250000" invalidSizeMessage="Maksymalny dopuszczalny rozmiar pliku graficznego to 250kB" dragDropSupport="true" update="@form" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" multiple="true" label="Wybierz" cancelLabel="Anuluj" />
+
+
+                <h:outputLabel for="img" value="Ikona: "/>
+                <p:graphicImage id="img" value="#{questionIconStreamerBean.image}" style="max-width: 150px; max-height: 150px;" rendered="#{not empty areaQuestionBean.selectedBusinessFieldAttribute.icon}">
+                    <f:param name="id" value="#{areaQuestionBean.selectedBusinessFieldAttribute.id}" />
+                </p:graphicImage>
+                <h:outputText value="ikona domyślna zaszyta w aplikacji mobilnej" rendered="#{empty areaQuestionBean.selectedBusinessFieldAttribute.icon}" />
+
+
+                <f:facet name="footer">
+                    <p:commandButton value="Zapisz" icon="ui-icon-disk" action="#{areaQuestionBean.save()}" update="@form"  />
+                    <p:commandButton value="Powrót do listy" icon="ui-icon-cancel" action="#{areaQuestionBean.list()}" process="@this" />
+                </f:facet>
+            </p:panelGrid>
+
+        </h:form>
+
+    </ui:define>
+</ui:composition>
+
+</html>

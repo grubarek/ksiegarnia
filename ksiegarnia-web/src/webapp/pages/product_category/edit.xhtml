@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<f:metadata>
+    <f:viewParam name="id" value="#{productCategoryBean.selectedBusinessFieldId}" />
+</f:metadata>
+
+
+<ui:composition template="/WEB-INF/templates/template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:o="http://omnifaces.org/ui"
+                xmlns:of="http://omnifaces.org/functions"
+                xmlns:p="http://primefaces.org/ui">
+
+<ui:define name="title">Kategoria produktu</ui:define>
+
+    <ui:define name="menu">
+        <ui:include src="/modules/tab_menu.xhtml">
+            <ui:param name="selectedTabIndex" value="3" />
+        </ui:include>
+    </ui:define>
+
+    <ui:define name="content">
+        <ui:include src="/modules/product_category_tab_menu.xhtml">
+            <ui:param name="selectedSubTabIndex" value="1" />
+        </ui:include>
+
+        <!--
+        <p:panel id="info" header="Informacje" style="margin-bottom:10px">
+            <p>
+            UWAGA: edycja poniższych wartości nie jest wskazana ze względu na to, że obszary biznesowe oraz związana z nimi logika biznesowa są zaszyte po stronie aplikacji mobilnej.
+                Aplikacja mobilna identyfikuje obszar biznesowy po nazwie - edycja nazwy obszaru może spowodować nieoczekiwane zachowanie aplikacji mobilnej.
+            </p>
+        </p:panel>
+        -->
+        <h:form id="detailsForm" rendered="#{not empty productCategoryBean.selectedBusinessField}">
+            <p:growl id="growl" showDetail="true" />
+
+            <p:panelGrid columns="4">
+                <h:outputLabel value="ID: " />
+                <h:outputText id="id" value="#{productCategoryBean.selectedBusinessField.id}" />
+
+                <h:outputLabel for="name" value="Nazwa:"/>
+                <p:inputText id="name" value="#{productCategoryBean.selectedBusinessField.name}" maxlength="100" required="true" requiredMessage="Wartość jest obowiązkowa" readonly="#{sessionBean.viewMode and not request.isUserInRole('ADMIN')}" />
+
+
+                <h:outputLabel for="status" value="Status:"/>
+                <h:outputText id="status" value="#{productCategoryBean.getStatusAsString(productCategoryBean.selectedBusinessField.status)}" />
+
+                <h:outputLabel for="empty1" value="&nbsp;" />
+                <h:outputText id="empty1"  value="&nbsp;" />
+
+                <h:outputLabel for="creationDate" value="Data utworzenia:" rendered="#{not sessionBean.newMode}" />
+                <h:outputText id="creationDate"  value="#{productCategoryBean.selectedBusinessField.creationDate}" rendered="#{not sessionBean.newMode}">
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+                <h:outputLabel for="updateDate" value="Data aktualizacji:" rendered="#{not sessionBean.newMode}" />
+                <h:outputText id="updateDate"  value="#{productCategoryBean.selectedBusinessField.updateDate}" rendered="#{not sessionBean.newMode}">
+                    <f:convertDateTime pattern="dd.MM.yyyy HH:mm" />
+                </h:outputText>
+
+
+                <f:facet name="footer">
+                    <p:commandButton value="Zapisz" icon="ui-icon-disk" action="#{productCategoryBean.save()}" update="@form" rendered="#{sessionBean.editMode and request.isUserInRole('ADMIN')}"  />
+                    <p:commandButton value="Powrót do listy" icon="ui-icon-cancel" action="#{productCategoryBean.list()}" process="@this" />
+                </f:facet>
+            </p:panelGrid>
+
+        </h:form>
+
+    </ui:define>
+</ui:composition>
+
+</html>
