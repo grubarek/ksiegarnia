@@ -1,36 +1,62 @@
 package pl.ksiegarnia.facade;
 
+import pl.ksiegarnia.dao.OrderDao;
+import pl.ksiegarnia.dao.exception.DaoException;
+import pl.ksiegarnia.jpa.Order;
+
 import javax.ejb.Stateless;
+import java.util.logging.Logger;
 
-import ksiegarnia.model.Order;
-
+//TODO dopisac logi
 @Stateless
 public class OrderFacade extends AbstractFacade implements OrderDao {
-	
-	@Override
-	public long createOrder(Order order) throws Exception {
-		return persistEntity(order);
-	}	@Override
-	public boolean updateOrder(Order order) throws Exception {
-		return mergeEntity(order);
+	private static final Logger logger = Logger.getLogger(OrderFacade.class.toString());
+
+	public long createOrder(Order order) throws DaoException {
+		logger.info("");
+		try{
+			entityManager.persist(order);
+			return order.getId();
+		}catch (Exception e){
+			throw new DaoException(e);
+		}
+
+	}
+
+	public boolean updateOrder(Order order) throws DaoException {
+		logger.info("");
+		try{
+			entityManager.merge(order);
+			return true;
+		}catch (Exception e){
+			throw new DaoException(e);
+		}
 	}
 
 
+	public Order getOrderById(long orderId) throws DaoException {
 
-	@Override
-	public Order getOrder(long id) {
-
-		return (Order) findEntity(id, Order.class);
+		logger.info("");
+		try{
+			Order order = entityManager.find(Order.class,orderId);
+			return order;
+		}catch (Exception e){
+			throw new DaoException(e);
+		}
 	}
 
-	@Override
-	public boolean deleteOrder(long id) throws Exception {
 
-		return removeEntity(id, Order.class);
+	public boolean deleteOrder(long orderId) throws DaoException {
+		logger.info("");
+		try{
+			Order order = entityManager.find(Order.class, orderId);
+			entityManager.remove(order);
+			return true;
+		}catch (Exception e){
+			throw new DaoException(e);
+		}
 	}
-	@Override
-	public String toString() {
-		return "OrderFacade []";
-	}
+
+
 
 }

@@ -1,19 +1,20 @@
 package pl.ksiegarnia.facade;
 
-import pl.oneapp.aegon.dao.RoleDao;
-import pl.oneapp.aegon.dao.exception.DaoException;
-import pl.oneapp.aegon.jpa.Role;
+
+import pl.ksiegarnia.dao.RoleDao;
+import pl.ksiegarnia.dao.exception.DaoException;
 
 import javax.ejb.Stateless;
+import javax.management.relation.Role;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.logging.Logger;
-
+//TODO Role w tabeli, np admin, customer itp.....
 @Stateless
 public class RoleFacade extends AbstractFacade implements RoleDao {
     private static final Logger logger = Logger.getLogger(RoleFacade.class.toString());
-
+/*
     public long createRole(Role role) throws DaoException {
         logger.info("RoleFacade.createRole - invoked");
         try {
@@ -87,4 +88,5 @@ public class RoleFacade extends AbstractFacade implements RoleDao {
 	        throw new DaoException(e);
         }
 	}
+*/
 }

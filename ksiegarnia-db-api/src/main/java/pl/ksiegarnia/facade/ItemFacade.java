@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 @Stateless
 public class ItemFacade extends AbstractFacade implements ItemDao {
-	private static final Logger logger = Logger.getLogger(UserFacade.class.toString());
+	private static final Logger logger = Logger.getLogger(ItemFacade.class.toString());
 
 
 	public long createItem(Item item) throws DaoException {

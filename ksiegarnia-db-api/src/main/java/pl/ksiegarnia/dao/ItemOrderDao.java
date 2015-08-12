@@ -1,16 +1,19 @@
 package pl.ksiegarnia.dao;
 
+import pl.ksiegarnia.dao.exception.DaoException;
+import pl.ksiegarnia.jpa.ItemOrder;
+
 import javax.ejb.Remote;
 
-import ksiegarnia.model.ItemOrder;
+
 
 @Remote
 public interface ItemOrderDao {
 	long createItemOrder(ItemOrder itemOrder) throws Exception;
 
-	boolean updateItemOrder(ItemOrder ItemOrder) throws Exception;
+	boolean updateItemOrder(ItemOrder ItemOrder) throws DaoException;
 
-	ItemOrder getItemOrder(long id);
+	ItemOrder getItemOrderById(long id) throws DaoException;
 
 	boolean deleteItemOrder(long id) throws Exception;
 }

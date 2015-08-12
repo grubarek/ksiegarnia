@@ -1,16 +1,20 @@
 package pl.ksiegarnia.dao;
 
-import javax.ejb.Remote;
+import pl.ksiegarnia.dao.exception.DaoException;
+import pl.ksiegarnia.jpa.Order;
 
-import ksiegarnia.model.Order;
+import javax.ejb.Local;
+import java.util.logging.Logger;
 
-@Remote
+
+@Local
 public interface OrderDao {
-	long createOrder(Order order) throws Exception;
 
-	boolean updateOrder(Order order) throws Exception;
+	long createOrder(Order order) throws DaoException;
 
-	Order getOrder(long id);
+	boolean updateOrder(Order order) throws DaoException;
 
-	boolean deleteOrder(long id) throws Exception;
+	Order getOrderById(long id) throws DaoException;
+
+	boolean deleteOrder(long id) throws DaoException;
 }

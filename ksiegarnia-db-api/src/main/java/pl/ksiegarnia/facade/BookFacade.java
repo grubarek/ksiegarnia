@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 @Stateless
 public class BookFacade extends AbstractFacade implements BookDao {
-    private static final Logger logger = Logger.getLogger(UserFacade.class.toString());
+    private static final Logger logger = Logger.getLogger(BookFacade.class.toString());
 
     public long createBook(Book book) throws DaoException {
         logger.info("BookFacade.createBook");
