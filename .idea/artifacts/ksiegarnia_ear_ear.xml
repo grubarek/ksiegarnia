@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ear" name="ksiegarnia-ear:ear">
+    <output-path>$PROJECT_DIR$/ksiegarnia-ear/target</output-path>
+    <root id="archive" name="ksiegarnia.ear">
+      <element id="artifact" artifact-name="ksiegarnia-ear:ear exploded" />
+    </root>
+  </artifact>
+</component>

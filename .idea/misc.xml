@@ -4,6 +4,9 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="ejb" url="file://$PROJECT_DIR$/ksiegarnia-web" />
+    <file type="ejb" url="file://$PROJECT_DIR$/ksiegrarnia-rest-model" />
+    <file type="javaeeApplication" url="file://$PROJECT_DIR$/ksiegarnia-ear" />
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="MavenProjectsManager">
@@ -11,6 +14,12 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ks/pom.xml" />
+        <option value="$PROJECT_DIR$/ksiegarnia-web/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">

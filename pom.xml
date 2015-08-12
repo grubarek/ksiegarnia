@@ -21,9 +21,23 @@
     <groupId>projekt</groupId>
     <artifactId>ksiegarnia</artifactId>
     <version>1.0</version>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
     <name>ksiegarnia</name>
-    <description>A starter Java EE 6 webapp project for use on JBoss EAP 6, generated from the jboss-javaee6-webapp archetype</description>
+    <modules>
+        <module>ksiegarnia-ear</module>
+        <module>ksiegarnia-web</module>
+        <module>ksiegarnia-jpa</module>
+        <module>ksiegarnia-rest-api</module>
+        <module>ksiegarnia-ear</module>
+        <module>ksiegarnia-db-api</module>
+        <module>ksiegarnia-rest-api</module>
+        <module>ks</module>
+        <module>ksiegarnia-web</module>
+        <module>ksiegarnia-jpa</module>
+        <module>ksiegrarnia-rest-model</module>
+
+
+    </modules>
 
     <url>http://jboss.org/jbossas</url>
     <licenses>

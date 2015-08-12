@@ -3,6 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ksiegarnia.iml" filepath="$PROJECT_DIR$/ksiegarnia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksiegarnia-db-api/ksiegarnia-db-api.iml" filepath="$PROJECT_DIR$/ksiegarnia-db-api/ksiegarnia-db-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksiegarnia-ear/ksiegarnia-ear.iml" filepath="$PROJECT_DIR$/ksiegarnia-ear/ksiegarnia-ear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksiegarnia-jpa/ksiegarnia-jpa.iml" filepath="$PROJECT_DIR$/ksiegarnia-jpa/ksiegarnia-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksiegarnia-rest-api/ksiegarnia-rest-api.iml" filepath="$PROJECT_DIR$/ksiegarnia-rest-api/ksiegarnia-rest-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksiegarnia-web/ksiegarnia-web.iml" filepath="$PROJECT_DIR$/ksiegarnia-web/ksiegarnia-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksiegrarnia-rest-model/ksiegrarnia-rest-model.iml" filepath="$PROJECT_DIR$/ksiegrarnia-rest-model/ksiegrarnia-rest-model.iml" />
     </modules>
   </component>
 </project>

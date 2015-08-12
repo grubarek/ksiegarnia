@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="ksiegarnia-web:war exploded">
-    <output-path>$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web</output-path>
+  <artifact type="exploded-war" name="ksiegarnia-jpa:war exploded">
+    <output-path>$PROJECT_DIR$/ksiegarnia-web/target/salesapp-cms-web</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="ksiegarnia-web" />
+          <element id="module-output" name="ksiegarnia-jpa" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: net.sf.jmimemagic:jmimemagic:0.1.3" />
@@ -34,9 +34,9 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/ksiegarnia-web/target/salesapp-cms-web/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="ksiegarnia-web/web/Web" />
+      <element id="javaee-facet-resources" facet="ksiegarnia-jpa/web/Web" />
     </root>
   </artifact>
 </component>
