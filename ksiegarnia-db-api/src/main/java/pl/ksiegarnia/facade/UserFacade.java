@@ -44,9 +44,18 @@ public class UserFacade extends AbstractFacade implements UserDao {
             throw new DaoException(e);
         }
     }
+    public User getUserById(long userId) throws DaoException{
+        logger.info("UserFacade.getUserById - invoked");
+        try{
+            User user = entityManager.find(User.class, userId);
+            return user;
+        }catch (Exception e){
+            throw new DaoException(e);
+        }
+    }
 
     public User getUserByLogin(String login) throws DaoException{
-        logger.info(String.format("AccountFacade.getAccountByLogin - invoked, login=%s", login));
+        logger.info(String.format("UserFacade.getUserByLogin - invoked, login=%s", login));
         try {
             TypedQuery<User> query = entityManager.createQuery("SELECT x FROM User x WHERE x.login = :login", User.class);
             query.setParameter("login", login);

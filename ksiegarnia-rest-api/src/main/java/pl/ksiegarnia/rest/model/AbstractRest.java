@@ -1,4 +1,4 @@
-package pl.ksiegarnia.rest;
+package pl.ksiegarnia.rest.model;
 
 import java.util.logging.Logger;
 

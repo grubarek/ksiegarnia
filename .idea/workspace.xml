@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0a9b6cc-f3d1-4ed6-9b49-bb10783aa563" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Address.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Address.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Book.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Item.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/ItemOrder.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/ItemOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Order.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/ShippingAddress.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/ShippingAddress.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/User.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/UserAddress.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/UserAddress.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/ResponseHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/UserRest.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/AbstractRest.java" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/AbstractRest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/UserDao.java" afterPath="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/UserDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/UserFacade.java" afterPath="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/UserFacade.java" />
     </list>
@@ -83,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/UserDao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,14 +87,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserFacade.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserFacade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/UserFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67069155">
-              <caret line="91" column="39" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33898306">
+              <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractRest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/AbstractRest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResponseHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/ResponseHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,16 +165,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Book.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Book.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Address.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Address.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -153,16 +173,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Item.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Item.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -197,9 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ksiegarnia-ear/pom.xml" />
-        <option value="$PROJECT_DIR$/ksiegarnia-rest-api/pom.xml" />
-        <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/resources/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/Address.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/Item.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/ItemOrder.java" />
@@ -225,7 +232,6 @@
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/pom.xml" />
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/dao/AddressDao.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-jpa/pom.xml" />
-        <option value="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/UserRest.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/AddressFacade.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/ItemDao.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/AddressDao.java" />
@@ -238,7 +244,6 @@
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/ItemOrderDao.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/ItemOrderFacade.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/OrderFacade.java" />
-        <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Order.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Book.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Address.java" />
@@ -246,8 +251,13 @@
         <option value="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/ItemOrder.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/ShippingAddress.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/UserAddress.java" />
-        <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/UserFacade.java" />
         <option value="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/User.java" />
+        <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/UserFacade.java" />
+        <option value="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/UserRest.java" />
+        <option value="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/AbstractRest.java" />
+        <option value="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/ResponseHelper.java" />
+        <option value="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java" />
       </list>
     </option>
   </component>
@@ -418,6 +428,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ksiegarnia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ksiegarnia" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ksiegarnia-rest-api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -991,12 +1039,12 @@
       <workItem from="1439373172490" duration="717000" />
       <workItem from="1439377906422" duration="2609000" />
       <workItem from="1439381180804" duration="5183000" />
-      <workItem from="1439386394990" duration="6541000" />
+      <workItem from="1439386394990" duration="7533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27632000" />
+    <option name="totallyTimeSpent" value="28624000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="0" width="1922" height="1081" extended-state="6" />
@@ -1021,7 +1069,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2078125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2078125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04964539" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1100,14 +1148,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ksiegarnia-jpa/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/AddressDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1142,14 +1182,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/AbstractRest.java">
+    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/AbstractRest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/UserRest.java">
+    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1355,9 +1395,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1415,26 +1453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.961538">
           <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/AbstractRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/UserRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="50" selection-start-line="57" selection-start-column="50" selection-end-line="57" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1522,7 +1540,45 @@
     <entry file="file://$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/UserFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="41" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/AbstractRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/ResponseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33898306">
+          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1549,16 +1605,6 @@
             <element signature="e#4123#4124#0" expanded="true" />
             <element signature="e#4164#4165#0" expanded="true" />
             <element signature="e#4192#4193#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/UserFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67069155">
-          <caret line="91" column="39" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
