@@ -1,4 +1,4 @@
-package rest;
+package pl.ksiegarnia.rest;
 
 import java.util.logging.Logger;
 

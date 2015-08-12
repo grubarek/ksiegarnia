@@ -25,7 +25,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ksiegarnia-db-api" scope="PROVIDED" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: projekt:ksiegrarnia-jpa:1.0" level="project" />
     <orderEntry type="module" module-name="ksiegarnia-jpa" scope="PROVIDED" />
     <orderEntry type="module" module-name="ksiegrarnia-rest-model" scope="PROVIDED" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.commons:commons-lang3:3.4" level="project" />

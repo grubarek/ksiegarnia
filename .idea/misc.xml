@@ -4,6 +4,8 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="ejb" url="file://$PROJECT_DIR$/ksiegarnia-db-api" />
+    <file type="ejb" url="file://$PROJECT_DIR$/ksiegarnia-jpa" />
     <file type="ejb" url="file://$PROJECT_DIR$/ksiegarnia-web" />
     <file type="ejb" url="file://$PROJECT_DIR$/ksiegrarnia-rest-model" />
     <file type="javaeeApplication" url="file://$PROJECT_DIR$/ksiegarnia-ear" />

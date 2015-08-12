@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="ksiegarnia-db-api:ejb">
+    <output-path>$PROJECT_DIR$/ksiegarnia-db-api/target</output-path>
+    <root id="archive" name="ksiegarnia-db-api.jar">
+      <element id="artifact" artifact-name="ksiegarnia-db-api:ejb exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="ejb-jar" name="ksiegarnia-jpa:ejb">
-    <output-path>$PROJECT_DIR$/ksiegarnia-web/target</output-path>
-    <root id="archive" name="ksiegarnia-web.jar">
+    <output-path>$PROJECT_DIR$/ksiegarnia-jpa/target</output-path>
+    <root id="archive" name="ksiegarnia-jpa.jar">
       <element id="artifact" artifact-name="ksiegarnia-jpa:ejb exploded" />
     </root>
   </artifact>

@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package rest;
+package pl.ksiegarnia.rest;
 
 import javax.ejb.EJB;
 import javax.servlet.http.HttpServletRequest;
@@ -26,10 +26,8 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
-import ksiegarnia.dao.*;
-
-import ksiegarnia.model.*;
+import pl.ksiegarnia.dao.UserDao;
+import pl.ksiegarnia.jpa.User;
 
 @Path("/")
 public class UserRest extends AbstractRest {
@@ -38,7 +36,7 @@ public class UserRest extends AbstractRest {
 	private UserDao userFacade;
 
 	@GET
-	@Path("/User/registerUser")
+	@Path("/pl.ksiegarnia.jpa.User/registerUser")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response registerUser(@QueryParam("login") String login,
 			@QueryParam("password") String password,
