@@ -27,6 +27,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import pl.ksiegarnia.dao.UserDao;
+import pl.ksiegarnia.dao.exception.DaoException;
 import pl.ksiegarnia.jpa.User;
 import pl.ksiegarnia.rest.model.AbstractRest;
 
@@ -64,7 +65,7 @@ public class UserRest extends AbstractRest {
 		Long id = new Long(0);
 		try {
 			id = userFacade.createUser(user);
-		} catch (Exception e) {
+		} catch (DaoException e) {
 
 			logger.severe(e.toString());
 			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)

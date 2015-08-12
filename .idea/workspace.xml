@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f0a9b6cc-f3d1-4ed6-9b49-bb10783aa563" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/ResponseHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/UserRest.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/AbstractRest.java" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/AbstractRest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/UserDao.java" afterPath="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/UserFacade.java" afterPath="$PROJECT_DIR$/ksiegarnia-db-api/src/main/java/pl/ksiegarnia/facade/UserFacade.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java" />
     </list>
     <ignored path="ksiegarnia.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,42 +27,6 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/User.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.5254237">
-                    <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                      <element signature="e#2366#2367#0" expanded="true" />
-                      <element signature="e#2380#2381#0" expanded="true" />
-                      <element signature="e#3056#3057#0" expanded="true" />
-                      <element signature="e#3072#3073#0" expanded="true" />
-                      <element signature="e#3874#3875#0" expanded="true" />
-                      <element signature="e#3902#3903#0" expanded="true" />
-                      <element signature="e#3960#3961#0" expanded="true" />
-                      <element signature="e#4003#4004#0" expanded="true" />
-                      <element signature="e#4034#4035#0" expanded="true" />
-                      <element signature="e#4054#4055#0" expanded="true" />
-                      <element signature="e#4096#4097#0" expanded="true" />
-                      <element signature="e#4123#4124#0" expanded="true" />
-                      <element signature="e#4164#4165#0" expanded="true" />
-                      <element signature="e#4192#4193#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -102,8 +61,8 @@
       <file leaf-file-name="UserRest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33898306">
-              <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.44067797">
+              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1039,12 +998,12 @@
       <workItem from="1439373172490" duration="717000" />
       <workItem from="1439377906422" duration="2609000" />
       <workItem from="1439381180804" duration="5183000" />
-      <workItem from="1439386394990" duration="7533000" />
+      <workItem from="1439386394990" duration="8175000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28624000" />
+    <option name="totallyTimeSpent" value="29266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="0" width="1922" height="1081" extended-state="6" />
@@ -1069,7 +1028,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2078125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2078125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04964539" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1575,19 +1534,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33898306">
-          <caret line="77" column="30" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5254237">
+        <state vertical-scroll-proportion="0.69880825">
           <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1605,6 +1554,16 @@
             <element signature="e#4123#4124#0" expanded="true" />
             <element signature="e#4164#4165#0" expanded="true" />
             <element signature="e#4192#4193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/resource/UserRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44067797">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
