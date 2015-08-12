@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
 @XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "Order")
-@Entity(name = "pl.ksiegarnia.jpa.Order")
+@Entity(name = "Order")
 @Table(name = "orders")
 public class Order implements Serializable {
 	private static final long serialVersionUID = 3448325390572648892L;

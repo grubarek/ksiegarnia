@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
 @XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "pl.ksiegarnia.jpa.Order")
-@Entity(name = "pl.ksiegarnia.jpa.ItemOrder")
+@Entity(name = "ItemOrder")
 @Table(name = "item_orders")
 public class ItemOrder implements Serializable {
 	private static final long serialVersionUID = 3448325390572648892L;

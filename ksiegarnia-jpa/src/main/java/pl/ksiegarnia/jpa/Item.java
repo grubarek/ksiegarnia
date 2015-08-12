@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
 @XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "Item")
-@Entity(name = "pl.ksiegarnia.jpa.Item")
+@Entity(name = "Item")
 @Table(name = "items")
 @Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="item_type",discriminatorType=DiscriminatorType.STRING,length=20)

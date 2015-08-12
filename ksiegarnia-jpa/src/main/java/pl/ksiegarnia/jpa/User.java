@@ -1,5 +1,7 @@
 package pl.ksiegarnia.jpa;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -21,11 +23,16 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
 @XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "User")
-@Entity(name = "pl.ksiegarnia.jpa.User")
+@Entity(name = "User")
 @Table(name = "users")
 public class User implements Serializable {
+
 	private static final long serialVersionUID = 3448325390572648892L;
 
+	public static final int STATUS_ACTIVE       = 1;
+	public static final int __DEFAULT_STATUS    = STATUS_ACTIVE;
+	public static final int STATUS_REMOVED      = 0;
+	public static final int STATUS_BLOCKED      = 2;
 	@Id
 	@Column(name = "id")
 	@SequenceGenerator(name = "usersSEQ", sequenceName = "users_id_seq", allocationSize = 1)
@@ -37,6 +44,21 @@ public class User implements Serializable {
 
 	@Column(name = "password", length = 80, nullable = false, unique = false)
 	private String password;
+
+
+
+	// TODO trzeba dodac do bazy danych
+	@Column(name = "password_salt", length = 80, nullable = false, unique = false)
+	private String passwordSalt;
+
+	@JsonIgnore
+	@Column(name = "failed_attempts", nullable = true, unique = false)
+	private Integer failedAttempts;
+
+	@Column(name = "status", nullable = false, unique = false)
+	private Integer status;
+    //TODO dodac do bazy danych 3 pola
+
 
 	@Column(name = "e_mail", length = 80, nullable = false, unique = true)
 	private String eMail;
@@ -79,7 +101,7 @@ public class User implements Serializable {
 		this.eMail = eMail;
 
 	}
-	@Override
+
 	public Long getId() {
 		return id;
 	}
@@ -126,6 +148,33 @@ public class User implements Serializable {
 
 	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
+	}
+	public String getPasswordSalt() {
+		return passwordSalt;
+	}
+
+	public Integer getFailedAttempts() {
+		return failedAttempts;
+	}
+
+	public void setFailedAttempts(Integer failedAttempts) {
+		this.failedAttempts = failedAttempts;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+	public void incrementFailedAttempts() {
+		this.failedAttempts++;
+	}
+
+
+	public void setPasswordSalt(String passwordSalt) {
+		this.passwordSalt = passwordSalt;
 	}
 
 	@Override

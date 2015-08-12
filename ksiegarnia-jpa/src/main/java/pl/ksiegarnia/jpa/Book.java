@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
 @XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "Book")
-@Entity(name = "pl.ksiegarnia.jpa.Book")
+@Entity(name = "Book")
 @Table(name = "books")
 @DiscriminatorValue("BOOK")
 public class Book extends Item implements Serializable {

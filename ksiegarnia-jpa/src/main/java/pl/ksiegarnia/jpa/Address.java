@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
 @XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "Address")
-@Entity(name = "pl.ksiegarnia.jpa.Address")
+@Entity(name = "Address")
 @Table(name = "addresses")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="address_type",discriminatorType=DiscriminatorType.STRING,length=20)
