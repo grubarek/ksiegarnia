@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
-@XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "Book")
+@XmlType(namespace = "http://localhost:8080/ksiegarnia/pl.ksiegarnia.model", name = "Book")
 @Entity(name = "Book")
 @Table(name = "books")
 @DiscriminatorValue("BOOK")

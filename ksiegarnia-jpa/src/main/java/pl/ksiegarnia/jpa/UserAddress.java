@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
-@XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "UserAddress")
+@XmlType(namespace = "http://localhost:8080/ksiegarnia/pl.ksiegarnia.model", name = "UserAddress")
 @Entity(name = "UserAddress")
 @DiscriminatorValue("USER_ADDRESS")
 public class UserAddress extends Address implements Serializable {

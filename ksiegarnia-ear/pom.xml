@@ -29,12 +29,7 @@
             <version>1.0</version>
             <type>ejb</type>
         </dependency>
-        <dependency>
-            <groupId>projekt</groupId>
-            <artifactId>ksiegarnia-rest-model</artifactId>
-            <version>1.0</version>
-            <type>ejb</type>
-        </dependency>
+
         <dependency>
             <groupId>projekt</groupId>
             <artifactId>ksiegarnia-db-api</artifactId>

@@ -12,7 +12,7 @@
     <artifactId>ksiegarnia-web</artifactId>
     <packaging>war</packaging>
 
-    <name>salesapp CMS WEB module</name>
+    <name>ksiegarnia CMS WEB module</name>
 
     <repositories>
         <repository>
@@ -65,17 +65,6 @@
 
         <!-- Import the CDI API, we use provided scope as the API is included
            in JBoss AS 7 -->
-        <dependency>
-            <groupId>javax.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-            <version>1.8</version>
-        </dependency>
 
         <dependency>
             <groupId>commons-io</groupId>
@@ -128,12 +117,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <scope>provided</scope>
@@ -171,6 +154,11 @@
         </dependency>
 
         <dependency>
+            <groupId>javax.faces</groupId>
+            <artifactId>javax.faces-api</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.2.5</version>
@@ -188,6 +176,11 @@
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.0-api</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.9</version>
         </dependency>
 
     </dependencies>

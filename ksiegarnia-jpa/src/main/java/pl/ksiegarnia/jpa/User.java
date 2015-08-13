@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
-@XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "User")
+@XmlType(namespace = "http://localhost:8080/ksiegarnia/pl.ksiegarnia.model", name = "User")
 @Entity(name = "User")
 @Table(name = "users")
 public class User implements Serializable {
@@ -42,13 +42,10 @@ public class User implements Serializable {
 	@Column(name = "login", length = 40, nullable = false, unique = true)
 	private String login;
 
-	@Column(name = "password", length = 80, nullable = false, unique = false)
+	@Column(name = "password_hash", length = 128, nullable = false, unique = false)
 	private String password;
 
-
-
-	// TODO trzeba dodac do bazy danych
-	@Column(name = "password_salt", length = 80, nullable = false, unique = false)
+	@Column(name = "password_salt", length = 128, nullable = false, unique = false)
 	private String passwordSalt;
 
 	@JsonIgnore
@@ -57,8 +54,6 @@ public class User implements Serializable {
 
 	@Column(name = "status", nullable = false, unique = false)
 	private Integer status;
-    //TODO dodac do bazy danych 3 pola
-
 
 	@Column(name = "e_mail", length = 80, nullable = false, unique = true)
 	private String eMail;

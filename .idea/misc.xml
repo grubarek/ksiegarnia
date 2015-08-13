@@ -20,7 +20,9 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/ks/pom.xml" />
+        <option value="$PROJECT_DIR$/ksiegarnia-rest-model/pom.xml" />
         <option value="$PROJECT_DIR$/ksiegarnia-web/pom.xml" />
+        <option value="$PROJECT_DIR$/ksiegrarnia-rest-model/pom.xml" />
       </set>
     </option>
   </component>

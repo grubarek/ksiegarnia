@@ -9,10 +9,10 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>ksiegarnia-rest-model</artifactId>
+    <artifactId>ksiegarnia-rest-pl.ksiegarnia.model</artifactId>
     <packaging>ejb</packaging>
 
-    <name>ksiegarnia rest model - EJB module</name>
+    <name>ksiegarnia rest pl.ksiegarnia.model - EJB module</name>
 
     <dependencies>
 
@@ -101,10 +101,10 @@
             <plugin>
                 <artifactId>maven-ejb-plugin</artifactId>
                 <version>2.3</version>
-                <configuration>
+                <pl.ksiegarnia.configuration>
                     <!-- Tell Maven we are using EJB 3.1 -->
                     <ejbVersion>3.1</ejbVersion>
-                </configuration>
+                </pl.ksiegarnia.configuration>
             </plugin>
         </plugins>
     </build>
@@ -124,9 +124,9 @@
                     <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>2.4.3</version>
-                        <configuration>
+                        <pl.ksiegarnia.configuration>
                             <skip>true</skip>
-                        </configuration>
+                        </pl.ksiegarnia.configuration>
                     </plugin>
                 </plugins>
             </build>

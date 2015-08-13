@@ -75,7 +75,7 @@ public class UserFacade extends AbstractFacade implements UserDao {
                 logger.info("authorize, no such user: " + login);
                 return null;
             }
-            String hash = DigestUtils.sha512Hex(user.getPasswordSalt() + password);
+            String hash = DigestUtils.shaHex(user.getPasswordSalt() + password);
             if (hash.equalsIgnoreCase(user.getPassword())) {
                 logger.info("authorize, user authorized");
 

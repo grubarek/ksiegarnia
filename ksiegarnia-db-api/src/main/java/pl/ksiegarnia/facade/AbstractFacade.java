@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
  */
 public abstract class AbstractFacade {
 
-    @PersistenceContext(unitName ="AegonUnit")
+    @PersistenceContext(unitName ="BookStoreUnit")
     protected EntityManager entityManager;
 
     public EntityManager getEntityManager() {

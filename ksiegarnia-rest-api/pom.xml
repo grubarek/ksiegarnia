@@ -33,12 +33,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <dependency>
-            <groupId>projekt</groupId>
-            <artifactId>ksiegarnia-rest-model</artifactId>
-            <version>1.0</version>
-            <scope>provided</scope>
-        </dependency>
 
         <dependency>
             <groupId>commons-codec</groupId>

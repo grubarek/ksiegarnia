@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
-@XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "Order")
+@XmlType(namespace = "http://localhost:8080/ksiegarnia/pl.ksiegarnia.model", name = "Order")
 @Entity(name = "Order")
 @Table(name = "orders")
 public class Order implements Serializable {

@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
-@XmlType(namespace = "http://localhost:8080/ksiegarnia/model", name = "ShippingAddress")
+@XmlType(namespace = "http://localhost:8080/ksiegarnia/pl.ksiegarnia.model", name = "ShippingAddress")
 @Entity(name = "ShippingAddress")
 @DiscriminatorValue("SHIPPING_ADDRESS")
 public class ShippingAddress extends Address implements Serializable {
