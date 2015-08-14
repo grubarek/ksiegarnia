@@ -2,5 +2,11 @@
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ksiegarnia-db-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ksiegarnia-ear" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ksiegarnia-jpa" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ksiegarnia-rest-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ksiegarnia-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ksiegrarnia-rest-model" charset="UTF-8" />
   </component>
 </project>

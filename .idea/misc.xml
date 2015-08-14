@@ -4,6 +4,11 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="ejb" url="file://$PROJECT_DIR$/ksiegarnia-db-api" />
+    <file type="ejb" url="file://$PROJECT_DIR$/ksiegarnia-jpa" />
+    <file type="ejb" url="file://$PROJECT_DIR$/ksiegarnia-web" />
+    <file type="ejb" url="file://$PROJECT_DIR$/ksiegrarnia-rest-model" />
+    <file type="javaeeApplication" url="file://$PROJECT_DIR$/ksiegarnia-ear" />
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
   <component name="IdProvider" IDEtalkID="7317AE9F36F1159BDF789FF775C2470B" />
@@ -12,6 +17,14 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ks/pom.xml" />
+        <option value="$PROJECT_DIR$/ksiegarnia-rest-model/pom.xml" />
+        <option value="$PROJECT_DIR$/ksiegarnia-web/pom.xml" />
+        <option value="$PROJECT_DIR$/ksiegrarnia-rest-model/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -26,21 +39,5 @@
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

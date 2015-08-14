@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="ksiegarnia-ear:ear exploded">
+    <output-path>$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ksiegarnia-ear/javaeeApplication/JavaEE" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="archive" name="ksiegarnia-rest-api-1.0.war">
+        <element id="artifact" artifact-name="ksiegarnia-rest-api:war exploded" />
+      </element>
+      <element id="archive" name="ksiegarnia-jpa-1.0.jar">
+        <element id="artifact" artifact-name="ksiegarnia-jpa:ejb exploded" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.11" />
+        <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.9.11" />
+        <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
+      </element>
+      <element id="archive" name="ksiegarnia-db-api-1.0.jar">
+        <element id="artifact" artifact-name="ksiegarnia-db-api:ejb exploded" />
+      </element>
+    </root>
+  </artifact>
+</component>

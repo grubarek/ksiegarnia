@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>
+        BOOK STORE - <ui:insert name="title"></ui:insert>
+    </title>
+    
+    <meta http-equiv="x-ua-compatible" content="IE=9" />
+
+</h:head>
+
+<h:body>
+    <!-- Kontrolki dla edytora w całym sklepie -->
+    <div id="page">
+
+        <div id="header">
+            <ui:insert name="header" >
+                <h1>LOGO BIBLIOTEKI  + KONTAKT</h1>
+                <ui:fragment rendered="#{sessionBean.isLogged()}">
+                    <h:form id="logout">
+                        <p:commandLink styleClass="menulink" action="#{loginBean.logout}" value="Wyloguj" />
+                    </h:form>
+                </ui:fragment>
+            </ui:insert>
+        </div>
+
+        <p:outputPanel id="tab">
+            <h:form id="blockForm" prependId="false">
+                <p:growl id="growl" showDetail="true" globalOnly="true" autoUpdate="true" />
+                <ui:insert name="menu"></ui:insert>
+            </h:form>
+        </p:outputPanel>
+
+
+        <div id="cotent">
+            <ui:insert name="content" >
+
+            </ui:insert>
+        </div>
+
+        <div id="footer">
+            <ui:insert name="footer" >
+                <h1>FOOTER: Kontakt itp, Java developer @PGrubarek</h1>
+            </ui:insert>
+        </div>
+
+    </div>
+
+
+
+
+</h:body>
+
+</html>
+
+
+
+
+

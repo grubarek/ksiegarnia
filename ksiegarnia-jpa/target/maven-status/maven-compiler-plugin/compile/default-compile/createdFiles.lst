@@ -1,0 +1,8 @@
+pl/ksiegarnia/jpa/Book.class
+pl/ksiegarnia/jpa/Item.class
+pl/ksiegarnia/jpa/ItemOrder.class
+pl/ksiegarnia/jpa/User.class
+pl/ksiegarnia/jpa/Order.class
+pl/ksiegarnia/jpa/Address.class
+pl/ksiegarnia/jpa/UserAddress.class
+pl/ksiegarnia/jpa/ShippingAddress.class

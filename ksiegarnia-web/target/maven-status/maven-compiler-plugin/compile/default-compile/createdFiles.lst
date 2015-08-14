@@ -1,0 +1,11 @@
+pl/ksiegarnia/utils/Navigation$Book.class
+pl/ksiegarnia/bean/LoginBean.class
+pl/ksiegarnia/bean/SessionBean.class
+pl/ksiegarnia/utils/Navigation$Mode.class
+pl/ksiegarnia/bean/BookBean.class
+pl/ksiegarnia/bean/SessionBean$Key.class
+pl/ksiegarnia/bean/UserBean.class
+pl/ksiegarnia/utils/UtilsBean.class
+pl/ksiegarnia/configuration/Privileges.class
+pl/ksiegarnia/utils/Navigation.class
+pl/ksiegarnia/utils/Navigation$User.class

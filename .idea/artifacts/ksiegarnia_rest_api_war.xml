@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ksiegarnia-rest-api:war">
+    <output-path>$PROJECT_DIR$/ksiegarnia-rest-api/target</output-path>
+    <root id="archive" name="ksiegarnia-rest-api-1.0.war">
+      <element id="artifact" artifact-name="ksiegarnia-rest-api:war exploded" />
+    </root>
+  </artifact>
+</component>
