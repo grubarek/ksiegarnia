@@ -20,19 +20,32 @@
 
         <div id="header">
             <ui:insert name="header" >
-                <ui:include src="/template/common/commonHeader.xhtml" />
+                <h1>LOGO BIBLIOTEKI  + KONTAKT</h1>
+                <ui:fragment rendered="#{sessionBean.isLogged()}">
+                    <h:form id="logout">
+                        <p:commandLink styleClass="menulink" action="#{loginBean.logout}" value="Wyloguj" />
+                    </h:form>
+                </ui:fragment>
             </ui:insert>
         </div>
 
-        <div id="content">
+        <p:outputPanel id="tab">
+            <h:form id="blockForm" prependId="false">
+                <p:growl id="growl" showDetail="true" globalOnly="true" autoUpdate="true" />
+                <ui:insert name="menu"></ui:insert>
+            </h:form>
+        </p:outputPanel>
+
+
+        <div id="cotent">
             <ui:insert name="content" >
-                <ui:include src="/template/common/commonContent.xhtml" />
+
             </ui:insert>
         </div>
 
         <div id="footer">
             <ui:insert name="footer" >
-                <ui:include src="/template/common/commonFooter.xhtml" />
+                <h1>FOOTER: Kontakt itp, Java developer @PGrubarek</h1>
             </ui:insert>
         </div>
 

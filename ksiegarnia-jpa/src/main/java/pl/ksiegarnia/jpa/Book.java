@@ -16,8 +16,6 @@ public class Book extends Item implements Serializable {
 	private static final long serialVersionUID = 3448325390572648892L;
 
 
-
-
 	@Column(name = "author", length = 80, nullable = false, unique = false)
 	private String author;
 	
@@ -49,6 +47,12 @@ public class Book extends Item implements Serializable {
 		this.description = description;
 	}
 
+	public Book(String author, String title,
+				String description) {
+		this.author = author;
+		this.title = title;
+		this.description = description;
+	}
 	public Book() {
 		super();
 	}
@@ -58,7 +62,32 @@ public class Book extends Item implements Serializable {
 		return "pl.ksiegarnia.jpa.Book [author=" + author + ", title=" + title + ", description="
 				+ description + "]";
 	}
-	
 
+	public String getAuthor() {
+		return author;
+	}
 
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
 }

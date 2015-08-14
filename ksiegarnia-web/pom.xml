@@ -12,7 +12,7 @@
     <artifactId>ksiegarnia-web</artifactId>
     <packaging>war</packaging>
 
-    <name>ksiegarnia CMS WEB module</name>
+    <name>ksiegarnia  module</name>
 
     <repositories>
         <repository>
