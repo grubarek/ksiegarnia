@@ -4,7 +4,7 @@ import pl.ksiegarnia.dao.UserDao;
 import pl.ksiegarnia.dao.exception.DaoException;
 import pl.ksiegarnia.jpa.User;
 import pl.ksiegarnia.utils.Navigation;
-
+import org.omnifaces.util.Faces;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -95,7 +95,11 @@ public class SessionBean implements Serializable {
         }
         map.put(key, value);
     }
+    public void logout() {
+        map.remove(Key.LOGGEDIN_USERNAME);
 
+        Faces.invalidateSession();
+    }
 
     public boolean isLogged() {
         return map.containsKey(Key.LOGGEDIN_USERNAME);

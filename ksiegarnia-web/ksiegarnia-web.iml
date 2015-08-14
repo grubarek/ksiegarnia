@@ -28,5 +28,6 @@
     <orderEntry type="library" name="org.apache.commons:commons-codec:1.31" level="project" />
     <orderEntry type="library" name="PrimeFaces-5.2" level="project" />
     <orderEntry type="library" name="javax.faces:javax.faces-api:2.2" level="project" />
+    <orderEntry type="library" name="org.omnifaces:omnifaces:2.1" level="project" />
   </component>
 </module>
