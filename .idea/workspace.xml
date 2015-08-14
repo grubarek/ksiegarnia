@@ -4,51 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/UserBean.java" line="25" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0a9b6cc-f3d1-4ed6-9b49-bb10783aa563" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/bean/SeasonBean.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/bean/SeasonBean.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-db-api/target/classes/pl/ksiegarnia/dao/BookDao.class" afterPath="$PROJECT_DIR$/ksiegarnia-db-api/target/classes/pl/ksiegarnia/dao/BookDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-db-api/target/classes/pl/ksiegarnia/facade/BookFacade.class" afterPath="$PROJECT_DIR$/ksiegarnia-db-api/target/classes/pl/ksiegarnia/facade/BookFacade.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/bean/LoginBean.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/bean/LoginBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/bean/LoginBean.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/bean/LoginBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/utils/Navigation.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/utils/Navigation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/utils/Navigation.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/utils/Navigation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/bean/SessionBean$Key.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/bean/SessionBean$Key.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/bean/SessionBean$Key.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/bean/SessionBean$Key.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/bean/SessionBean.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/bean/SessionBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/bean/SessionBean.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/bean/SessionBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/bean/UserBean.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/classes/pl/ksiegarnia/bean/UserBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/bean/UserBean.class" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/classes/pl/ksiegarnia/bean/UserBean.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-db-api/target/ksiegarnia-db-api-1.0.jar" afterPath="$PROJECT_DIR$/ksiegarnia-db-api/target/ksiegarnia-db-api-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia/ksiegarnia-db-api-1.0.jar" afterPath="$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia/ksiegarnia-db-api-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/lib/ksiegarnia-db-api-1.0.jar" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/lib/ksiegarnia-db-api-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia/ksiegarnia-jpa-1.0.jar" afterPath="$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia/ksiegarnia-jpa-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/target/ksiegarnia-jpa-1.0.jar" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/target/ksiegarnia-jpa-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/lib/ksiegarnia-jpa-1.0.jar" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/WEB-INF/lib/ksiegarnia-jpa-1.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia/ksiegarnia-rest-api-1.0.war" afterPath="$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia/ksiegarnia-rest-api-1.0.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/target/ksiegarnia-rest-api-1.0.war" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/target/ksiegarnia-rest-api-1.0.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web.war" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia.ear" afterPath="$PROJECT_DIR$/ksiegarnia-ear/target/ksiegarnia.ear" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Book.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/BookBean.java" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/BookBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/UserBean.java" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/UserBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/index.xhtml" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/index.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/index.xhtml" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/ksiegarnia-web/index.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-ear/ksiegarnia-ear.iml" afterPath="$PROJECT_DIR$/ksiegarnia-ear/ksiegarnia-ear.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/ksiegarnia-jpa.iml" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/ksiegarnia-jpa.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/ksiegarnia-rest-api.iml" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/ksiegarnia-rest-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-db-api/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/ksiegarnia-db-api/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-ear/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/ksiegarnia-ear/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/ksiegarnia-web/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/pom.xml" afterPath="$PROJECT_DIR$/ksiegarnia-web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/modules/tab_menu.xhtml" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/modules/tab_menu.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/WEB-INF/templates/template.xhtml" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/WEB-INF/templates/template.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="f0a9b6cc-f3d1-4ed6-9b49-bb10783aa563" name="Default" comment="" />
     <ignored path="ksiegarnia.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/maven-status/" />
@@ -1255,12 +1211,12 @@
       <workItem from="1439453146975" duration="9676000" />
       <workItem from="1439463298307" duration="4008000" />
       <workItem from="1439469587963" duration="47000" />
-      <workItem from="1439544335989" duration="12650000" />
+      <workItem from="1439544335989" duration="13098000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55647000" />
+    <option name="totallyTimeSpent" value="56095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="0" width="1922" height="1081" extended-state="6" />
