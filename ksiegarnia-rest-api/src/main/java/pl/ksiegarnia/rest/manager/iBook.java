@@ -6,6 +6,6 @@ import java.util.List;
  * Created by pgrubarek on 17.08.15.
  */
 public interface iBook {
-   // public List<>
+
 }
 

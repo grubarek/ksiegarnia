@@ -112,29 +112,15 @@ public class LoginBean implements Serializable {
         sessionBean.login(login);
         sessionBean.put(SessionBean.Key.LOGGEDIN_USER_ID, user.getId());
 
-        if (request.isUserInRole("AGENT")) {
-            logger.info(login + " has role AGENT");
-            sessionBean.put(SessionBean.Key.LOGGEDIN_USERROLE, "AGENT");
-        }
-        if (request.isUserInRole("AEGON ACTIVE")) {
-            logger.info(login + " has role AEGON ACTIVE");
-            sessionBean.put(SessionBean.Key.LOGGEDIN_USERROLE, "AEGON ACTIVE");
-        }
-        if (request.isUserInRole("AGENT PREMIUM")) {
-            logger.info(login + " has role AGENT PREMIUM");
-            sessionBean.put(SessionBean.Key.LOGGEDIN_USERROLE, "AGENT PREMIUM");
-        }
+
+
         if (request.isUserInRole("ADMIN")) {
             logger.info(login + " has role ADMIN");
             sessionBean.put(SessionBean.Key.LOGGEDIN_USERROLE, "ADMIN");
         }
     }
 
-    /**
-     * Wylogowuje użytkownika. Usuwa informacje o jego sesji i przenosi go na stronę logowania.
-     *
-     * @return
-     */
+
     public String logout() {
         logger.info("LoginBean.logout - invoke");
 
