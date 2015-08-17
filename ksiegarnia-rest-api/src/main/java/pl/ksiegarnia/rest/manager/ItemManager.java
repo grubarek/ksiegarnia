@@ -2,6 +2,7 @@ package pl.ksiegarnia.rest.manager;
 
 import pl.ksiegarnia.dao.ItemDao;
 import pl.ksiegarnia.dao.exception.DaoException;
+import pl.ksiegarnia.rest.mappers.ItemMapper;
 import pl.ksiegarnia.rest.model.Item;
 
 import javax.ejb.EJB;
@@ -23,11 +24,11 @@ public class ItemManager implements iItem {
         pl.ksiegarnia.jpa.Item itemJPA = null;
         logger.info("ItemManager.create - invoked");
         try {
-            itemJPA = itemDao.createItem(item.getId());
-        } catch (DaoException e) {
+            item = ItemMapper.mapItemJPAToItemREST(itemJPA);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return item;
     }
     @Override
     public Item edit(Item item) {
