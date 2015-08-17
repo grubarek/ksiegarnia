@@ -5,9 +5,11 @@ import pl.ksiegarnia.dao.BookDao;
 import pl.ksiegarnia.dao.ItemDao;
 import pl.ksiegarnia.dao.ItemOrderDao;
 import pl.ksiegarnia.dao.UserDao;
+import pl.ksiegarnia.dao.exception.DaoException;
 import pl.ksiegarnia.jpa.Book;
 import pl.ksiegarnia.jpa.Item;
 import pl.ksiegarnia.jpa.User;
+import pl.ksiegarnia.utils.Navigation;
 import pl.ksiegarnia.utils.UtilsBean;
 
 import javax.annotation.PostConstruct;
@@ -28,6 +30,9 @@ import java.util.logging.Logger;
 public class UserBean implements Serializable{
     private static final long serialVersionUID = -7603349152920549746L;
     private static Logger logger = Logger.getLogger(UserBean.class.toString());
+
+    @ManagedProperty(value = "#{sessionBean}")
+    private SessionBean sessionBean;
 
     @EJB
     UserDao userDao;
@@ -87,6 +92,24 @@ public class UserBean implements Serializable{
             logger.warning(String.format("getBooks err: %s", e));
             return null;
         }
+    }
+
+    public String addItem (){
+        logger.info("UserBean.addItem - invoked");
+        selectedBook = new Book();
+        sessionBean.put(SessionBean.Key.SELECTED_BOOK ,selectedBook);
+        sessionBean.put(SessionBean.Key.MODE, Navigation.Mode.ADD);
+      return Navigation.Book.ADD_BOOK;  // formulaz dodania ksiazki, tam jest przycisk SAVE- metoda nizej
+    }
+
+    public String save(){
+        logger.info("save - invoked");
+        try {
+            bookDao.updateBook(selectedBook);
+        } catch (DaoException e) {
+            e.printStackTrace();
+        }
+        return Navigation.Book.LIST;   // po stworzenu wraca do listy ksiazek
     }
 
 

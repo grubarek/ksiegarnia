@@ -29,5 +29,6 @@ public class Navigation {
         public static final String ADD_COMMENT = SECTION_PATH + "addComment.xhtml?faces-redirect=true";
         public static final String DETAILS = SECTION_PATH + "show.xhtml?faces-redirect=true";
         public static final String VIEW = SECTION_PATH + "bookView.xhtml?faces-redirect=true";
+        public static final String ADD_BOOK = SECTION_PATH + "addBook.xhtml?faces-redirect=true";
     }
 }

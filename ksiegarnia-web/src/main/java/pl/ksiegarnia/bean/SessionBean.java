@@ -129,7 +129,7 @@ public class SessionBean implements Serializable {
         LOGGEDIN_USERNAME,
         LOGGEDIN_USER_ID,
         LOGGEDIN_USERROLE,
-        SELECTED_USER, //użytkownik/konto zaznaczony
+        SELECTED_BOOK, //użytkownik/konto zaznaczony
         SELECTED_ITEM,
         MODE //tryb: EDIT lub VIEW lub NEW
     }
