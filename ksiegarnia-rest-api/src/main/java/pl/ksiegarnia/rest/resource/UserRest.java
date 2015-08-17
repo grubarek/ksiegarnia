@@ -17,25 +17,33 @@
 package pl.ksiegarnia.rest.resource;
 
 import javax.ejb.EJB;
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import pl.ksiegarnia.dao.UserDao;
 import pl.ksiegarnia.dao.exception.DaoException;
 import pl.ksiegarnia.jpa.User;
+import pl.ksiegarnia.rest.manager.iItem;
+import pl.ksiegarnia.rest.manager.iUser;
 import pl.ksiegarnia.rest.model.AbstractRest;
+import pl.ksiegarnia.rest.model.Item;
 
 @Path("/")
 public class UserRest extends AbstractRest {
 
 	@EJB
 	private UserDao userFacade;
+
+	@Inject
+	private iItem itemManager;
+
+	@Inject
+	private iUser userManager;
+
 
 	@GET
 	@Path("/registerUser")
@@ -74,6 +82,16 @@ public class UserRest extends AbstractRest {
 		}
 
 		return Response.ok(id, MediaType.APPLICATION_JSON).build();
+	}
+	@POST
+	@Path("/insertItem")
+	//@Consumes ("application/json")
+	@Produces(MediaType.APPLICATION_JSON)
+	public  Response insertItem (Item item, @Context HttpServletRequest request){
+		logger.info(String.format("instertItem invoked, params: % s", item));
+		Item i = null;
+		i = itemManager.create(item);
+		return ResponseHelper.ok(i);
 	}
 
 	//TODO do przeanalizowania
