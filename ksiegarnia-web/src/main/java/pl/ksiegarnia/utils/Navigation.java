@@ -17,7 +17,7 @@ public class Navigation {
 
     public static final class User {
         public static final String SECTION_PATH = "/pages/user/";
-
+        public static final String ADD_USER = SECTION_PATH+  "addUser.xhtml?faces-redirect=true";
         public static final String ADD_COMMENT = SECTION_PATH + "addComment.xhtml?faces-redirect=true";
         public static final String DETAILS = SECTION_PATH + "show.xhtml?faces-redirect=true";
         public static final String VIEW = SECTION_PATH + "userView.xhtml?faces-redirect=true";

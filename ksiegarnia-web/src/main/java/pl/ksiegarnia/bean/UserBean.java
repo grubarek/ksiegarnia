@@ -94,7 +94,7 @@ public class UserBean implements Serializable{
         }
     }
 
-    public String addItem (){
+    public String addBook (){
         logger.info("UserBean.addItem - invoked");
         selectedBook = new Book();
         sessionBean.put(SessionBean.Key.SELECTED_BOOK ,selectedBook);
@@ -110,6 +110,18 @@ public class UserBean implements Serializable{
             e.printStackTrace();
         }
         return Navigation.Book.LIST;   // po stworzenu wraca do listy ksiazek
+    }
+    public String createUser(){
+        logger.info("UserBean.createUser - invoked");
+        try{
+            selectedUser = new User();
+            sessionBean.put(SessionBean.Key.SELECTED_USER, selectedUser);
+
+        }catch (Exception e){
+            logger.warning(String.format("addUser error: %s", e));
+            e.printStackTrace();
+        }
+        return Navigation.User.ADD_USER;
     }
 
 

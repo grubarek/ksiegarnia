@@ -12,9 +12,13 @@ import javax.xml.bind.annotation.XmlType;
 @Entity(name = "Book")
 @Table(name = "books")
 @DiscriminatorValue("BOOK")
-public class Book extends Item implements Serializable {
+public class Book implements Serializable {
 	private static final long serialVersionUID = 3448325390572648892L;
-
+	@Id
+	@Column(name = "id")
+	@SequenceGenerator(name = "itemsSEQ", sequenceName = "items_id_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "itemsSEQ")
+	private Long id;
 
 	@Column(name = "author", length = 80, nullable = false, unique = false)
 	private String author;
@@ -25,42 +29,36 @@ public class Book extends Item implements Serializable {
 	@Column(name = "description", length = 1000, nullable = false, unique = false)
 	private String description;
 
-	public Book(Long id, Double price, Integer quantity,
-			Set<ItemOrder> itemOrders, String author, String title,
-			String description) {
-		super(id, price, quantity, itemOrders);
-		this.author = author;
-		this.title = title;
-		this.description = description;
-	}
+	@Column(name = "price", nullable = false, unique = false)
+	private Double price;
 
-	public Book(Long id, Double price, Integer quantity,
-			Set<ItemOrder> itemOrders) {
-		super(id, price, quantity, itemOrders);
-	}
+	@Column(name = "quantity", nullable = false, unique = false)
+	private Integer quantity;
 
-	public Book(Double price, Integer quantity, String author, String title,
-			String description) {
-		super(price, quantity);
-		this.author = author;
-		this.title = title;
-		this.description = description;
-	}
+	@Column(name = "book_type", length = 40, nullable = false, unique = false)
+	private String book_type;
 
-	public Book(String author, String title,
-				String description) {
-		this.author = author;
-		this.title = title;
-		this.description = description;
-	}
 	public Book() {
-		super();
 	}
 
-	@Override
-	public String toString() {
-		return "pl.ksiegarnia.jpa.Book [author=" + author + ", title=" + title + ", description="
-				+ description + "]";
+
+	public Book(String title, String description, Double price, Integer quantity, String book_type, String author) {
+		this.title = title;
+		this.description = description;
+		this.price = price;
+		this.quantity = quantity;
+		this.book_type = book_type;
+		this.author = author;
+	}
+
+
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getAuthor() {
@@ -87,7 +85,44 @@ public class Book extends Item implements Serializable {
 		this.description = description;
 	}
 
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	public String getBook_type() {
+		return book_type;
+	}
+
+	public void setBook_type(String book_type) {
+		this.book_type = book_type;
+	}
+
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		return "Book{" +
+				"id=" + id +
+				", author='" + author + '\'' +
+				", title='" + title + '\'' +
+				", description='" + description + '\'' +
+				", price=" + price +
+				", quantity=" + quantity +
+				", book_type='" + book_type + '\'' +
+				'}';
 	}
 }

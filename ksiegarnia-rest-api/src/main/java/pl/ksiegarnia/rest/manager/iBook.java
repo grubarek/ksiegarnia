@@ -1,5 +1,7 @@
 package pl.ksiegarnia.rest.manager;
 
+import pl.ksiegarnia.jpa.Book;
+
 import java.util.List;
 
 /**
@@ -7,5 +9,9 @@ import java.util.List;
  */
 public interface iBook {
 
+
+    pl.ksiegarnia.rest.model.Book create(pl.ksiegarnia.rest.model.Book book);
+
+    pl.ksiegarnia.rest.model.Book edit(pl.ksiegarnia.rest.model.Book book);
 }
 

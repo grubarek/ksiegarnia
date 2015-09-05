@@ -46,6 +46,13 @@
         <div id="footer">
             <ui:insert name="footer" >
                 <h1>FOOTER: Kontakt itp, Java developer @PGrubarek</h1>
+                <f:facet name="footer">
+                    <p:commandButton value="Dodaj ksiazke" icon="ui-icon-disk" action="#{userBean.save()}" update="@form"  />
+                </f:facet>
+                <f:facet name="footer">
+                    <p:commandButton value="Nowy Uzytkownik" icon="ui-icon-disk" action="#{userBean.save()}" update="@form"  />
+                </f:facet>
+
             </ui:insert>
         </div>
 
