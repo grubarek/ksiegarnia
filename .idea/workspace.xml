@@ -4,36 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/UserBean.java" line="27" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0a9b6cc-f3d1-4ed6-9b49-bb10783aa563" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/javax.annotation.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/javax.jms.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/javax.resource.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/javax.servlet.jsp.jstl.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/javax.transaction.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/pages/user/addUser" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/javax_faces_javax_faces_api_2_21.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_omnifaces_omnifaces_2_11.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/resources/img/ajax-loader.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/resources/img/logo.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Book.java" afterPath="$PROJECT_DIR$/ksiegarnia-jpa/src/main/java/pl/ksiegarnia/jpa/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/Book.java" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/manager/BookManager.java" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/manager/BookManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/mappers/BookMapper.java" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/mappers/BookMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/utils/Navigation.java" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/utils/Navigation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/SessionBean.java" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/SessionBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/User.java" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/UserBean.java" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/UserBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/manager/iBook.java" afterPath="$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/manager/iBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/index.xhtml" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/index.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-db-api/ksiegarnia-db-api.iml" afterPath="$PROJECT_DIR$/ksiegarnia-db-api/ksiegarnia-db-api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/ksiegarnia-web.iml" afterPath="$PROJECT_DIR$/ksiegarnia-web/ksiegarnia-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia.iml" afterPath="$PROJECT_DIR$/ksiegarnia.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/WEB-INF/templates/template.xhtml" afterPath="$PROJECT_DIR$/ksiegarnia-web/src/main/webapp/WEB-INF/templates/template.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="f0a9b6cc-f3d1-4ed6-9b49-bb10783aa563" name="Default" comment="" />
     <ignored path="ksiegarnia.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/maven-status/" />
@@ -244,8 +215,8 @@
       <file leaf-file-name="BookManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/manager/BookManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83391005">
-              <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.4602076">
+              <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1558,16 +1529,16 @@
       <workItem from="1440957240898" duration="1716000" />
       <workItem from="1441122283608" duration="3550000" />
       <workItem from="1441275022453" duration="6869000" />
-      <workItem from="1441453608415" duration="765000" />
+      <workItem from="1441453608415" duration="969000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89490000" />
+    <option name="totallyTimeSpent" value="89694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1054" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1581,7 +1552,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23482428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23482428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14536741" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2063,16 +2034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/manager/BookManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83391005">
-          <caret line="57" column="17" selection-start-line="57" selection-start-column="17" selection-end-line="57" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ksiegarnia-web/src/main/java/pl/ksiegarnia/bean/BookBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2120,6 +2081,16 @@
         <state vertical-scroll-proportion="0.6893617">
           <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ksiegarnia-rest-api/src/main/java/pl/ksiegarnia/rest/manager/BookManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4602076">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
